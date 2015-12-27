@@ -49,6 +49,7 @@
     <!-- Chrome Theme Color -->
     <meta name="theme-color" content="#F2BE55">
 
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="/css/style.min.css" inline>
     <!-- Google Analytics go here -->
     <script>
@@ -61,6 +62,14 @@
     </script>
 </head>
 <body>
-    {{#block "main"}}{{/block}}
+    <div class="wrapper">
+        <div class="content">
+            {{#block "main"}}{{/block}}
+        </div>
+        <div class="footer">
+            <span class="left">Made with love by <a href="https://evantarrh.com">Evan.</a></span>
+            <span class="right"><a href="https://github.com/evantarrh/jade/issues/new">Suggest an improvement.</a></span>
+        </div>
+    </div>
 </body>
 </html>

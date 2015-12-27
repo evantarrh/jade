@@ -1,8 +1,8 @@
 linters:
   HexNotation:
-    style: 'uppercase'
+    style: 'lowercase'
   HexLength:
-    style: 'long'
+    style: 'short'
   SingleLinePerSelector:
     enabled: false
   LeadingZero:

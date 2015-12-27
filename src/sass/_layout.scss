@@ -1,11 +1,42 @@
-$content-width: 58.75rem;
+$max-width: 750px;
+$footer-height: 40px;
+
+.wrapper {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: $max-width;
+  min-height: 100%;
+  width: 90%;
+}
 
 .content {
   @include clearfix;
-  margin: 0 auto;
-  max-width: $content-width;
-  padding: 0 0.625rem;
-  width: 90%;
+  padding-bottom: $footer-height;
+}
+
+.headers {
+  padding: 3rem 0;
+}
+
+.footer {
+  bottom: 0;
+  height: $footer-height;
+  max-width: inherit;
+  position: absolute;
+  width: inherit;
+
+  span {
+    font-size: 16px;
+    line-height: $footer-height;
+
+    &.left {
+      float: left;
+    }
+
+    &.right {
+      float: right;
+    }
+  }
 }
 
 @media screen and (max-width: $phone-landscape-max) {

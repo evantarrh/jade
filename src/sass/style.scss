@@ -5,3 +5,9 @@
 @import 'base';
 @import 'layout';
 @import 'responsive';
+
+a {
+  border-bottom: 2px solid $jade;
+  color: $jade;
+  padding-bottom: 2px;
+}
