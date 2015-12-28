@@ -1,5 +1,5 @@
 $max-width: 750px;
-$footer-height: 40px;
+$footer-height: 80px;
 
 .wrapper {
   @include clearfix;
@@ -12,6 +12,7 @@ $footer-height: 40px;
 .content {
   @include clearfix;
   padding-bottom: $footer-height;
+  transition: 0.2s all;
 }
 
 .headers {
@@ -23,6 +24,7 @@ $footer-height: 40px;
   height: $footer-height;
   max-width: inherit;
   position: absolute;
+  transition: 0.2s all;
   width: inherit;
 
   span {
