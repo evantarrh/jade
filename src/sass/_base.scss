@@ -4,9 +4,16 @@ html, body {
   font-family: $sans;
   font-size: 20px;
   font-weight: $light;
-  height: 100%;
   line-height: 1.5;
   position: relative;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
 }
 
 a, a:hover {

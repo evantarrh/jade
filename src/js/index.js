@@ -8,15 +8,13 @@ document.addEventListener('DOMContentLoaded', function() {
   toggleMenu = function() {
     burger.classList.toggle('close');
     bignav.classList.toggle('hidden');
-    content.classList.toggle('blur');
-    footer.classList.toggle('blur');
 
     open = (open ? false : true);
   };
 
   burger.addEventListener('click', toggleMenu);
+
   document.onkeydown = function(e) {
-    e = (e || window.event);
     e.preventDefault();
     if (open && e.keyCode === 27) {
       toggleMenu();

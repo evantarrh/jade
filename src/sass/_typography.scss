@@ -17,10 +17,12 @@ h1, %h1 {
 
 h2, %h2 {
   color: $gray;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: $bold;
-  letter-spacing: 3px;
-  line-height: 1;
+  letter-spacing: 1.5px;
+  line-height: 1rem;
+  padding-bottom: 0.25rem;
+  padding-top: 1rem;
   text-transform: uppercase;
 }
 
@@ -41,6 +43,11 @@ h5, %h5 {
 
 p, .p {
   font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+.with-list {
+  padding-bottom: 5px;
 }
 
 strong {

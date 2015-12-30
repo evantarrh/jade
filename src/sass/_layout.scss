@@ -17,6 +17,12 @@ $footer-height: 80px;
 
 .headers {
   padding: 3rem 0;
+
+  h2 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    padding: 0;
+  }
 }
 
 .footer {
@@ -37,6 +43,31 @@ $footer-height: 80px;
 
     &.right {
       float: right;
+    }
+  }
+}
+
+.inline-nav {
+  height: 100px;
+  width: 100%;
+
+  .arrow {
+    cursor: pointer;
+
+    .line {
+      background-color: $jade;
+      border-radius: 2px;
+      height: 4px;
+      width: 34px;
+    }
+
+    :first-child {
+      margin-bottom: 18px;
+      transform: rotate(45deg);
+    }
+
+    :last-child {
+      transform: rotate(-45deg);
     }
   }
 }
