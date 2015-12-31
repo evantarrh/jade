@@ -1,34 +1,92 @@
-@media screen and (max-width: $desktop-max) {
+@media screen and (max-width: $desktop-min) {
   html, body {
     font-size: 20px;
   }
 }
 
-@media screen and (max-width: $tablet-landscape-max) {
+@media screen and (max-width: $tablet-landscape-min) {
   html, body {
     font-size: 18px;
   }
 }
 
-@media screen and (min-width: $tablet-portrait-min) {
+@media screen and (max-width: $tablet-landscape-min) {
   .mobile-only {
-    display: none;
+    display: block;
   }
-}
 
-@media screen and (max-width: $phone-landscape-max) {
-  html, body {
-    font-size: 14px;
+  h1 {
+    font-size: 1.75rem;
+    line-height: 64px; // Height of burger
+  }
+
+  .big-nav {
+    transition: none;
+  }
+
+  #burger {
+    background-color: $white;
+    left: 0;
+    padding: 20px;
+    top: 0;
+
+    .patty {
+      margin-bottom: 6px;
+      width: 30px;
+    }
+
+    :last-child {
+      margin: 0;
+    }
+
+    &.close {
+      :first-child {
+        transform: rotate(45deg) translateY(14px);
+        width: 42px; // sqrt(2) * 30
+      }
+
+      :last-child {
+        transform: rotate(-45deg) translateY(-14px);
+        width: 42px; // sqrt(2) * 30
+      }
+    }
+
+    &.close {
+      background-color: $jade;
+    }
+  }
+
+  .content {
+    padding-top: 64px; // Height of burger/header
+    padding-bottom: 80px; // Height of footer
   }
 
   .hide-mobile {
     display: none;
   }
+
+  .footer {
+    text-align: center;
+
+    span.left {
+      display: none;
+    }
+
+    span.right {
+      float: none;
+    }
+  }
+}
+
+@media screen and (max-width: $phone-landscape-max) {
+  html, body {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: $phone-portrait-max) {
   html, body {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
