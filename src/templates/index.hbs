@@ -1,6 +1,6 @@
 {{#extend "base"}}
-{{#content "main" mode="prepend"}}
 
+{{#content "main" mode="prepend"}}
 <div class="headers hide-mobile">
   <h1>From Zero to Website</h1>
   <h2>Learn to build your own personal website</h2>
@@ -19,14 +19,18 @@
   <li>Install <a href="//git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a>.</li>
 </ul>
 
-<!-- <div class="inline-nav">
-  <div class="day">Day One</div>
-  <div class="subject">HTML</div>
-  <div class="arrow">
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-</div> -->
-
+<h2>OK, I'm ready!</h2>
+<p>Then let's go!</p>
 {{/content}}
+
+{{#content "nav" mode="prepend"}}
+<div class="next-subject"><a href="/jade/html.html">Learn HTML</a></div>
+<div class="arrow">
+  <a href="/jade/html.html">
+    <div class="line"></div>
+    <div class="line"></div>
+  </a>
+</div>
+{{/content}}
+
 {{/extend}}
