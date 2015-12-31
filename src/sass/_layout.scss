@@ -33,17 +33,16 @@ $footer-height: 80px;
   transition: 0.2s all;
   width: 100%;
 
-  span {
-    font-size: 16px;
+  .left {
+    float: left;
+    font-size: 1rem;
     line-height: $footer-height;
+  }
 
-    &.left {
-      float: left;
-    }
-
-    &.right {
-      float: right;
-    }
+  .right {
+    float: right;
+    font-size: 1rem;
+    line-height: $footer-height;
   }
 }
 

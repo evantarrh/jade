@@ -40,6 +40,8 @@
     }
 
     &.close {
+      background-color: $jade;
+
       :first-child {
         transform: rotate(45deg) translateY(14px);
         width: 42px; // sqrt(2) * 30
@@ -50,29 +52,44 @@
         width: 42px; // sqrt(2) * 30
       }
     }
-
-    &.close {
-      background-color: $jade;
-    }
   }
 
   .content {
     padding-top: 64px; // Height of burger/header
-    padding-bottom: 80px; // Height of footer
   }
 
   .hide-mobile {
     display: none;
   }
 
+  .inline-nav {
+    height: auto;
+    margin: 0;
+    padding: 0 0 50px;
+    width: 100%;
+
+    .next-subject {
+      width: 85%;
+
+      a {
+        font-size: 1.25rem;
+      }
+    }
+
+    .arrow {
+      right: 20px;
+      transform: translateY(-50%) scale(0.5);
+    }
+  }
+
   .footer {
     text-align: center;
 
-    span.left {
+    .left {
       display: none;
     }
 
-    span.right {
+    .right {
       float: none;
     }
   }
