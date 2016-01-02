@@ -50,6 +50,14 @@ p, .p {
   padding-bottom: 5px;
 }
 
+.inline-code {
+  background-color: $light-gray;
+  border-radius: 3px;
+  font-family: Monaco, monospace;
+  font-size: 0.8rem;
+  padding: 3px 8px;
+}
+
 strong {
   font-weight: $bold;
 }

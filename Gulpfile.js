@@ -27,7 +27,7 @@ var yaml = require('js-yaml');
 handlebars.Handlebars.registerHelper(layouts(handlebars.Handlebars));
 
 gulp.task('sass:lint', function() {
-  gulp.src('./src/sass/*.scss')
+  gulp.src(['./src/sass/*.scss', '!./src/sass/_prism.scss'])
     .pipe(plumber())
     .pipe(scsslint());
 });
