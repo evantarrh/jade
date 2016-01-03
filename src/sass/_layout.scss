@@ -13,17 +13,14 @@ $footer-height: 80px;
   margin: 0 auto;
   transition: 0.2s all;
   width: 90%;
+
+  img {
+    margin: 0 auto;
+  }
 }
 
 .headers {
   padding: 4rem 0 3rem;
-
-  h2 {
-    font-size: 1rem;
-    letter-spacing: 3px;
-    line-height: 1.4rem;
-    padding: 0;
-  }
 }
 
 .footer {
@@ -45,6 +42,11 @@ $footer-height: 80px;
     font-size: 0.8rem;
     line-height: $footer-height;
   }
+}
+
+.image-wrapper {
+  padding: 0.5rem 0;
+  text-align: center;
 }
 
 .inline-nav {

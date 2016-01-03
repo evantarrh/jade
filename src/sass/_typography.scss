@@ -17,23 +17,33 @@ h1, %h1 {
 
 h2, %h2 {
   color: $gray;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: $bold;
-  letter-spacing: 1.5px;
+  letter-spacing: 3px;
   line-height: 1.4rem;
-  padding-bottom: 0.25rem;
-  padding-top: 1rem;
+  padding: 0;
   text-transform: uppercase;
 }
 
 h3, %h3 {
-  font-size: 1.5rem;
+  color: $jade; // big enough that we don't need the jade-text shade
+  font-size: 1.25rem;
   letter-spacing: 0.5px;
+  padding-top: 2rem;
 }
 
 h4, %h4 {
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+  color: $gray;
+  font-weight: $bold;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  line-height: 1.4rem;
+  padding-top: 1rem;
+  text-transform: uppercase;
+
+  .inline-code {
+    text-transform: none;
+  }
 }
 
 h5, %h5 {
@@ -43,7 +53,8 @@ h5, %h5 {
 
 p, .p {
   font-size: 1rem;
-  padding-bottom: 1rem;
+  line-height: 1.6rem;
+  padding: 0.5rem 0;
 }
 
 .with-list {
@@ -68,6 +79,6 @@ strong {
   }
 
   h4, %h4 {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 }

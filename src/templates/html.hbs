@@ -6,11 +6,38 @@
   <h2>What Your Browser Speaks</h2>
 </div>
 
-<p>HTML is the language of the Internet. When your browser sees a file with the extension <code class="inline-code">.html</code>,  </p>
+<p>HTML is the language of the Internet. Whenever you visit a website, what you see is the result of HTML being interpreted and rendered by your browser.</p>
+
+<h3>What does HTML look like?</h3>
+<p>It's simple!</p>
 
 <pre><code class="language-markup">&lt;p&gt;It's simple!&lt;/p&gt;</code></pre>
 
-<p>Content coming soon!</p>
+<p>HTML is simply the content you see on the screen, with extra markup around it to help format it. In the example above, the <code class="inline-code">&lt;p&gt;</code> is an <strong>opening tag</strong> that denotes the start of a paragraph, and the <code class="inline-code">&lt;/p&gt;</code> closes the paragraph. The whole paragraph can be referred to as an <strong>element</strong>.</p>
+
+<p>HTML is more than just paragraphs, though. Let's get familiar with some more HTML elements!</p>
+
+<h4>Headers</h4>
+<p>One of the best ways to create hierarchy is with <strong>headers</strong>. At the top of this page, the "HTML" is actually an <code class="inline-code">h1</code>, so the code looks like <code class="inline-code">&lt;h1&gt;HTML&lt;/h1&gt;</code>.
+
+<p><code class="inline-code">h1</code>'s are the biggest options for headers, but there are also <code class="inline-code">h2</code>'s and <code class="inline-code">h3</code>'s, all the way down to the rarely-used <code class="inline-code">h6</code>. For example, the gray "Headers" at the top of this section is an <code class="inline-code">h4</code>.</p>
+
+<h4>The <code class="inline-code">&lt;img&gt;</code> tag</h4>
+<p>It's actually really easy to put pictures on websites&mdash;there's a tag for that!</p>
+
+<div class="image-wrapper">
+  <img src="http://imgs.xkcd.com/comics/tags.png">
+</div>
+
+<pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo;&gt;</code></pre>
+
+<p>Notice that the <strong>source</strong> of the image (a URL specifying the location of the image) goes inside the tag itself. This isn't the only <strong>attribute</strong> that can be specified inside the tag&semi; we can also set the height or width of the image like this!</p>
+
+<pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo; width=&ldquo;100%&rdquo;&gt;</code></pre>
+<pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo; width=&ldquo;300px&rdquo;&gt;</code></pre>
+
+<p>There are several valid formats for these <code class="inline-code">height</code> and <code class="inline-code">width</code> attributes, which we'll cover in more detail in our section on CSS.</p>
+
 {{/content}}
 
 {{#content "nav" mode="prepend"}}
