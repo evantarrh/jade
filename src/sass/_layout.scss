@@ -87,6 +87,35 @@ $footer-height: 80px;
   }
 }
 
+.separator {
+  background: $jade;
+  height: 2px;
+  margin: 4rem auto;
+  width: 85%;
+
+  &::after {
+    border: 2px solid $jade;
+    content: "";
+    left: 50%;
+    height: 16px;
+    position: absolute;
+    transform: translateY(-9px);
+    width: 8px;
+  }
+
+  &::before {
+    border: 2px solid $jade;
+    border-right: none; // because it's already on the ::after
+    content: "";
+    height: 16px;
+    right: 50%;
+    position: absolute;
+    transform: translateY(-9px);
+    width: 8px;
+  }
+
+}
+
 @media screen and (max-width: $phone-landscape-max) {
   .content {
     padding: 0 10px;

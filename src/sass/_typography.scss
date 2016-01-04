@@ -34,8 +34,8 @@ h3, %h3 {
 
 h4, %h4 {
   color: $gray;
-  font-weight: $bold;
   font-size: 0.8rem;
+  font-weight: $bold;
   letter-spacing: 1.5px;
   line-height: 1.4rem;
   padding-top: 1rem;
@@ -55,6 +55,7 @@ p, .p {
   font-size: 1rem;
   line-height: 1.6rem;
   padding: 0.5rem 0;
+  position: relative;
 }
 
 .with-list {
@@ -66,11 +67,16 @@ p, .p {
   border-radius: 3px;
   font-family: Monaco, monospace;
   font-size: 0.8rem;
+  line-height: 0;
   padding: 3px 8px;
 }
 
 strong {
   font-weight: $bold;
+}
+
+em {
+  font-style: italic;
 }
 
 @media screen and (max-width: $phone-landscape-max) {

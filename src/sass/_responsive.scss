@@ -93,6 +93,10 @@
       font-size: 1rem;
     }
   }
+
+  .major-key::before {
+    content: none;
+  }
 }
 
 @media screen and (max-width: $phone-landscape-max) {

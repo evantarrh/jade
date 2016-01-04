@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
   burger.addEventListener('click', toggleMenu);
 
   document.onkeydown = function(e) {
-    e.preventDefault();
     if (open && e.keyCode === 27) {
+      e.preventDefault();
       toggleMenu();
     }
   };
