@@ -13,6 +13,10 @@ h1, %h1 {
   font-weight: $extra-bold;
   letter-spacing: -0.5px;
   line-height: 3rem;
+
+  &::selection {
+    background-color: $medium-light-gray;
+  }
 }
 
 h2, %h2 {
@@ -28,8 +32,11 @@ h2, %h2 {
 h3, %h3 {
   color: $jade; // big enough that we don't need the jade-text shade
   font-size: 1.25rem;
-  letter-spacing: 0.5px;
   padding-top: 2rem;
+
+  &::selection {
+    background-color: $medium-light-gray;
+  }
 }
 
 h4, %h4 {
@@ -53,7 +60,7 @@ h5, %h5 {
 
 p, .p {
   font-size: 1rem;
-  line-height: 1.6rem;
+  line-height: 1.618rem;
   padding: 0.5rem 0;
   position: relative;
 }
@@ -63,7 +70,7 @@ p, .p {
 }
 
 .inline-code {
-  background-color: $light-gray;
+  background-color: $medium-light-gray;
   border-radius: 3px;
   font-family: Monaco, monospace;
   font-size: 0.8rem;
@@ -77,6 +84,12 @@ strong {
 
 em {
   font-style: italic;
+}
+
+h2, h4, p, .inline-code, .major-key, strong, em {
+  &::selection {
+    background-color: $translucent-jade;
+  }
 }
 
 @media screen and (max-width: $phone-landscape-max) {

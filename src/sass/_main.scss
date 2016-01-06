@@ -7,15 +7,29 @@ a {
   padding-bottom: 1px;
   transition: $transition-length border-bottom;
 
+  &.ALMIGHTY-GOLDEN-RATIO {
+    color: $dark-gold;
+
+    &:hover {
+      border-bottom: 2px solid $dark-gold;
+      color: $dark-gold;
+    }
+  }
+
   &:hover {
     border-bottom: 2px solid $jade-text;
     color: $jade-text;
+  }
+
+  &::selection {
+    background-color: $medium-light-gray;
   }
 }
 
 .mobile-header {
   background: $white;
   display: none;
+  left: 0;
   margin-left: 70px;
   position: fixed;
   width: 100%;
@@ -113,8 +127,9 @@ a {
 }
 
 .major-key {
-  background-color: rgba(255,215,48,0.4);
+  background-color: $light-gold;
   padding: 2px 0;
+  transition: 0.1s ease background-color;
 
   .inline-code {
     line-height: inherit;
@@ -124,12 +139,16 @@ a {
   &::before {
     background-image: url('/img/key.png');
     background-size: 25px;
-    content: "";
-    left: 0;
+    content: '';
     height: 25px;
+    left: 0;
     position: absolute;
     transform: translateX(-50px) translateY(5px);
     width: 25px;
+  }
+
+  &:hover {
+    background-color: $gold;
   }
 }
 
@@ -145,8 +164,9 @@ dl {
   dt {
     font-weight: 700;
   }
+
   dd {
-    padding-left: 1rem;
     padding-bottom: 0.5rem;
+    padding-left: 1rem;
   }
 }

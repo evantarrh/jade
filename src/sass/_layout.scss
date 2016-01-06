@@ -95,9 +95,9 @@ $footer-height: 80px;
 
   &::after {
     border: 2px solid $jade;
-    content: "";
-    left: 50%;
+    content: '';
     height: 16px;
+    left: 50%;
     position: absolute;
     transform: translateY(-9px);
     width: 8px;
@@ -105,11 +105,11 @@ $footer-height: 80px;
 
   &::before {
     border: 2px solid $jade;
-    border-right: none; // because it's already on the ::after
-    content: "";
+    border-right: 0; // because it's already on the ::after
+    content: '';
     height: 16px;
-    right: 50%;
     position: absolute;
+    right: 50%;
     transform: translateY(-9px);
     width: 8px;
   }

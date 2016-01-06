@@ -3,12 +3,299 @@
 {{#content "main" mode="prepend"}}
 <div class="headers hide-mobile">
   <h1>CSS</h1>
-  <h2>Because websites should be more than Times New Roman</h2>
+  <h2>Because websites deserve better than Times New Roman</h2>
 </div>
 
-<p>Cascading Style Sheets: it's what's for dinner!</p>
+<p>Hopefully, you've recently finished building yourself a complete page in HTML. &ldquo;But wait,&rdquo; you say. &ldquo;This isn't what real websites look like. This is what garbage websites look like!&rdquo;</p>
+<p>Even if your HTML looks perfect, it's not enough on its own. Thankfully, we have CSS: a tool to help our websites not look like garbage.</p>
 
-<p>Content coming soon!</p>
+<h3 id="intro"><a href="#intro">What is CSS? What does it look like?</a></h3>
+
+<p><span class="major-key">CSS modifies properties of HTML elements.</span> Here's what it looks like:</p>
+
+<pre><code class="language-css">p {
+    font-size: 20px;
+}</code></pre>
+
+<p>That snippet of CSS will set the font size of all paragraphs on an HTML page to 20 pixels.</p>
+
+<p>More generally, a CSS <strong>rule</strong> is formatted like so:</p>
+
+<pre><code class="language-css">[selector] {
+    [property]: [value];
+    [property]: [value];
+    [any arbitrary number of property/value pairs]
+}</code></pre>
+
+<p>CSS has a strange learning curve, because almost none of the knowledge is conceptual&semi; instead, learning CSS comes down to getting familiar with a lot of different rules, and trying a lot of different solutions when problems come up. Once again, Google will be your friend!</p>
+
+<div class="separator"></div>
+
+<p>In order to write CSS, we have to get familiar with <strong>selectors</strong>&colon; the string that determines which elements your CSS rules are applied to.</p>
+
+<p><pre><code class="language-css">[selector] {
+    [property/value pairs]
+}</code></pre>
+
+<h3 id="selectors"><a href="#selectors">Selectors</a></h3>
+
+<p>There are a couple different ways we can specify HTML elements using selectors. Let's dive in!</p>
+
+<h4>Element type</h4>
+
+<p>In the first example on this page, the selector was just one character long: <code class="inline-code">p</code>. That selector means that the CSS rule applies to all <code class="inline-code">&lt;p&gt;</code>'s on the page.</p>
+
+<p>We can do the same thing with any HTML element&colon; <code class="inline-code">a</code>, <code class="inline-code">h1</code>, <code class="inline-code">body</code>, you name it. However, it's important to note that <span class="major-key">any CSS rule will apply not only to the selected elements, but also to their children.</span> For example, check out the following rule:</p>
+<pre><code class="language-css">body {
+    color: red; /* the "color" rule sets text color */
+}</code></pre>
+<p>This will make all of your website's text red, because all of the content is nested inside the <code class="inline-code">body</code>.</p>
+
+<h4>Classes</h4>
+
+<p>What if you wanted a CSS rule to only apply to certain paragraphs? That's what <strong>classes</strong> are for! Check out this snippet of HTML and CSS:</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;p&gt;This is a normal paragraph.&lt;/p&gt;
+    &lt;p class=&ldquo;special&rdquo;&gt;This paragraph is special, mmkay.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<pre><code class="language-css">p {
+    color: red;
+}
+
+.special {
+    font-size: 36px;
+}</code></pre>
+
+<p>A class is just another attribute of HTML elements. In order to use a class as a CSS selector, all you need to do is add a <code class="inline-code">.</code> to the beginning of the class name in your CSS.</p>
+<p>In the example above, both paragraphs will be red, because the <code class="inline-code">color: red</code> rule applies to every <code class="inline-code">&lt;p&gt;</code> element. But only the second paragraph will have a larger-than-normal font-size.</p>
+<p>You can apply a certain class to as many HTML elements as you need to. Let's look at another example:</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;p&gt;I'm a normal paragraph.&lt;/p&gt;
+    &lt;p class=&ldquo;small&rdquo;&gt;I am so small.&lt;/p&gt;
+    &lt;p class=&ldquo;small&rdquo;&gt;I am so small.&lt;/p&gt;
+    &lt;p class=&ldquo;small&rdquo;&gt;I am so small.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<pre><code class="language-css">p {
+    color: red;
+}
+
+.small {
+    color: blue;
+    font-size: 8px;
+}</code></pre>
+
+<p>Only the first paragraph will have a normal font-size&semi; the last three will be super small. But what about their color? The last three paragraphs all have two different rules that affect their color.</p>
+
+<p>They're all blue! CSS is smarter than you might think, and it knows that the <code class="inline-code">.small</code> rule is more specific than the rule that applies to all paragraphs. Therefore, if there are any conflicts for a specific HTML element, CSS follows the most specific rule that applies to it.</p>
+
+<!-- optional paragraph about how a `p` rule would be more specific than `body` here -->
+
+<h4>Combining selectors</h4>
+
+<p>What if you wanted a rule to apply to multiple selectors? CSS makes that easy, too!</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;h1&gt;Pokemon are sick&lt;/h1&gt;
+    &lt;p class=&ldquo;big-red&rdquo;&gt;Charizard&lt;/p&gt;
+    &lt;p class=&ldquo;big-blue&rdquo;&gt;Blastoise&lt;/p&gt;
+    &lt;p class=&ldquo;big-green&rdquo;&gt;Venusaur&lt;/p&gt;
+    &lt;p&gt;Fuck Digimon amirite&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<pre><code class="language-css">big-red {
+    color: red;
+}
+
+.big-blue {
+    color: blue;
+}
+
+.big-green {
+    color: green;
+}
+
+h1, .big-red, .big-blue, .big-green {
+    font-size: 72px;
+}</code></pre>
+
+<p>You can use commas to combine selectors &lpar;both HTML element selectors like <code class="inline-code">h1</code> and class selectors like <code class="inline-code">big-red</code>&rpar;. In this example, everything except the last paragraph has a font-size of <code class="inline-code">72px</code>.</p>
+
+<div class="separator"></div>
+
+<p>Now, we're ready to talk about the different kinds of properties you can set using CSS! There is a truly enormous number of them, so let's focus on three different kinds of properties: text, colors, and positioning.</p>
+
+<h3 id="type"><a href="#type">How can I customize text with CSS?</a></h3>
+
+<p>Typography can be one of the most fun parts of building a website, if you are a nerd like me. Let's go through some relevant CSS properties to help make your text look excellent!</p>
+
+<h4>font-size</h4>
+<p>Sets the size of the text. There are several valid <strong>units</strong> for properties like this, but let's stick to <code class="inline-code">px</code>, because it's consistent and easy to use.</p>
+
+<p class="font-size-1">font-size: 10px;</p>
+<p class="font-size-2">font-size: 18px;</p>
+<p class="font-size-3">font-size: 32px;</p>
+
+<p>Generally, the most readable size for text is around 18 or 20 <code class="inline-code">px</code>, but it will depend on the font and the context. Note that it a little change goes a long way when it comes to pixels!</p>
+
+<h4>line-height</h4>
+<p>This attribute will control the <strong>line-height</strong> of your text. Again, we'll use <code class="inline-code">px</code> as units. To help show this visually, I've changed the <code class="inline-code">background-color</code> of these next paragraphs&colon; something we'll talk about soon!</p>
+
+<p class="line-height-1">line-height: 15px;<br>
+You don't want your line-height to be less than your font-size. Readability should always be your priority.</p>
+<p class="line-height-2">line-height: 20px;<br>If your line-height is the same value as your font-size, it still might look cramped.</p>
+<p class="line-height-3">line-height: 40px;<br>Because double-spacing isn't just for making your essays hit ten pages! This can look awkward, too, though, so be careful.</p>
+
+<p>Some people believe that the ideal line-height is &lpar;font-size &times; 1.618&rpar;, which is the <a href="https://en.wikipedia.org/wiki/Golden_ratio" class="ALMIGHTY-GOLDEN-RATIO">golden ratio</a>. It does work surprisingly well, and it's how the text has been set for this tutorial all along.</p>
+
+<h4>font-weight</h4>
+
+<p>Font-weight can be a finicky attribute, because it depends on the font you're using. The two most common values are <code class="inline-code">400</code> and <code class="inline-code">700</code> &lpar;no units&rpar;, which translate to "normal" and "bold". The font I'm using, Lato, also has a 900 weight, which I use for my <code class="inline-code">h1</code>'s.</p>
+
+<p class="font-weight-1">font-weight: 400;</p>
+<p class="font-weight-2">font-weight: 700;</p>
+<p class="font-weight-3">font-weight: 900;</p>
+
+<h4>font-style</h4>
+<p>Font-style should be used as nothing more than an on/off switch for italics. Relevant values are <code class="inline-code">italic</code> and <code class="inline-code">normal</code>.</p>
+
+<p class="font-style-1">font-style: italic;</p>
+<p class="font-style-2">font-style: normal (default value);</p>
+
+<h4>font-family</h4>
+<p>Font-family might be the most important attribute, because it lets use choose our actual font! There are several built-in fonts that will work in any browser &lpar;of which Times New Roman is the most infamous&rpar;, but we can do better than that.</p>
+
+<p>font-family: Lato</p>
+
+<p>Thanks to <a href="https://google.com/fonts">Google Fonts</a>, I can use a font I love, called Lato. Google Fonts gives you free access to thousands of different fonts, and it's extremely useful. It's easy to use&colon; once you select a font and some weights, all you have to do is put the HTML snippet they give you in your website's <code class="inline-code">head</code>! Here's the one I use for this website:</p>
+
+<pre><code class="language-markup">&lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic' rel='stylesheet' type='text/css'&gt;</code></pre>
+
+<p>That snippet of HTML is all I need to use Lato at different weights.</p>
+
+<div class="separator"></div>
+
+<p>Now that we have some typesetting skills, let's take a look at colors! Websites shouldn't have to be black and white.</p>
+
+<h3 id="color"><a href="#color">How do colors work in CSS?</a></h3>
+
+<p>While it's possible to make a paragraph <code class="inline-code">red</code>, you will quickly find that that won't offer you a whole lot of creativity. CSS allows you to be much more specific than that!</p>
+
+<h4>RGB</h4>
+<p>There are several options for syntax, but a good alternative is <strong>RGB</strong>, where you specify a value between 0 and 255 for red, green, and blue.</p>
+
+<p class="color-1">color: rgb(0, 0, 0);</p>
+<p class="color-2">color: rgb(0, 0, 255);</p>
+<p class="color-3">color: rgb(42, 136, 252);</p>
+
+<p>Remember&colon; <code class="inline-code">rgb(0, 0, 0)</code> is black and <code class="inline-code">rgb(255, 255, 255)</code> is white.</p>
+
+<h4>Hex</h4>
+<p>You should also be familiar with <strong>hexadecimal notation</strong>, or more simply, <strong>hex values</strong> &lpar;or <strong>hex codes</strong>&rpar;. Here's what it looks like:</p>
+
+<p class="color-1">color: #000000;</p>
+<p class="color-2">color: #0000FF;</p>
+<p class="color-3">color: #2A88FC;</p>
+
+<p>Hex codes work the same way as RGB, assigning values from 0 to 255 to red, green, and blue. However, hex uses just two characters for each: they're numbers in <a href="https://en.wikipedia.org/wiki/Hexadecimal">base 16</a>. The second example above, <code class="inline-code">#0000FF</code>, translates to <code class="inline-code">rgb(0, 0, 255)</code>. The first two numbers, <code class="inline-code">00</code>, translate to a red value of 0&semi; the second two numbers, <code class="inline-code">00</code>, translate to a green value of 0&semi; and the final two numbers, <code class="inline-code">FF</code>, translate to a blue value of 255.</p>
+
+<p></p>
+
+<h4>In context</h4>
+
+<p class="with-list">Let's look at some examples of using colors in context.</p>
+<ul>
+<li><p>Setting text color</p>
+<p>We've done this before! You can set text color just by using the attribute <code class="inline-code">color</code>.</p>
+<pre><code class="language-css">.white-text {
+    color: rgb(255, 255, 255);
+}</code></pre>
+</li>
+<li><p>Setting a background color</p>
+<p>This will affect the background color of the selected element. You can set the background of your whole website just by changing the <code class="inline-code">background-color</code> of the body.</p>
+<pre><code class="language-css">body {
+    /* This will make your whole website neon green */
+    /* Not a great idea */
+    background-color: rgb(0, 255, 0);
+}</code></pre>
+</li>
+</ul>
+
+<div class="separator"></div>
+
+<p>We have one more topic of CSS attributes to cover&colon; positioning. Positioning things using CSS can be frustrating, but you'll learn quickly! And by that I mean you'll quickly learn that CSS is completely unusable and broken forever. Welcome to the party.</p>
+
+<h3 id="position"><a href="#position">How do I position elements on a page?</a></h3>
+
+<p>CSS gives us many tools to solve the problem of putting something on a page.
+</p>
+
+
+<div class="separator"></div>
+
+<p>Now that we've learned some useful CSS rules, we'll learn how to integrate a CSS file with our HTML!</p>
+
+<h3 id="linking"><a href="#linking">How do I put CSS in my HTML file?</a></h3>
+
+<p>Just like HTML, you can write all of your CSS in one file, as long as you end the filename in <code class="inline-code">.css</code>. You can put the file in the same directory as your HTML files, or create a folder called &ldquo;css&rdquo; and put the file there. Then, in your HTML file, link to the CSS file in the <code class="inline-code">head</code>, using the following syntax:</p>
+
+<pre><code class="language-markup">&lt;head&gt;
+    &lt;title&gt;How Website&lt;/title&gt;
+    &lt;!-- The href for the CSS will be different depending on
+        whether you put the CSS file in a new directory, which is
+        what I've done here. --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+<p>A consequence of this is that you can have one CSS file for multiple HTML files. Once again, that's how this website works! Here's another look at the directory structure, including the CSS:</p>
+<pre><code class="language-markup">
+jade/
+  - css/
+    - style.css
+  - index.html
+  - html.html
+  - css.html
+  - js.html
+  - git.html
+  - nextsteps.html</code></pre>
+
+<p>Each HTML file links to that same CSS file.</p>
+
+<p>An important note is that I also use a font from Google Fonts. <span class="major-key">To use a Google Font, you must import the font before importing the CSS file</span>, like so:</p>
+<pre><code class="language-markup">&lt;head&gt;
+    &lt;title&gt;Kylo Ren's Personal Blog&lt;/title&gt;
+    &lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+<div class="separator"></div>
+
+<p>Let's learn some words!</p>
+
+<h3 id="terms"><a href="#terms">CSS terms</a></h3>
+<dl>
+  <dt>CSS</dt>
+  <dd>Short for Cascading Style Sheets. Nobody knows that, though, so don't bother remembering it.</dd>
+  <dt>rule</dt>
+  <dd>A complete snippet of CSS&colon; a selector and a property-value pair.</dd>
+  <dt>selector</dt>
+  <dd>A string that specifies HTML elements.</dd>
+  <dt>class</dt>
+  <dd>A special HTML attribute that makes it easy to select a group using CSS.</dd>
+  <dt>unit</dt>
+  <dd>Most CSS values require units, like <code class="inline-code">px</code>.</dd>
+  <dt>line-height</dt>
+  <dd>The vertical space taken up by each line of text in an HTML element.</dd>
+  <dt>RGB</dt>
+  <dd>A format for describing colors&colon; <code class="inline-code">rgb(0, 0, 0)</code>. Each value can range from 0 to 255.</dd>
+  <dt>Hex values/hex codes</dt>
+  <dd>A more compact color format&colon; <code class="inline-code">#00FF00</code>. Works the same way as RGB&colon; the first two characters correspond to red, the next two correspond to blue, the last two correspond to green. Each pair of characters can range from <code class="inline-code">00</code> to <code class="inline-code">FF</code>.</dd>
+</dl>
+
+<div class="separator"></div>
+
+<h3 id="do-this"><a href="#do-this">Explore the wonderful world of CSS</a></h3>
+
 
 {{/content}}
 

@@ -41,10 +41,10 @@
 
 <pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo;&gt;</code></pre>
 
-<p>Notice that the source of the image (a URL specifying the location of the image) goes inside the tag itself. This isn't the only <strong>attribute</strong> that can be specified inside the tag&colon; we can also set the height or width of the image like this!</p>
+<p>Notice that the source of the image (a URL specifying the location of the image) goes inside the tag itself. This isn't the only <strong>attribute</strong> that can be specified inside the tag&colon; we can also set the height and/or width of the image like this!</p>
 
 <pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo; width=&ldquo;100%&rdquo;&gt;</code></pre>
-<pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo; width=&ldquo;300px&rdquo;&gt;</code></pre>
+<pre><code class="language-markup">&lt;img src=&ldquo;http://imgs.xkcd.com/comics/tags.png&rdquo; height=&ldquo;300px&rdquo;&gt;</code></pre>
 
 <p>There are several valid formats for these <code class="inline-code">height</code> and <code class="inline-code">width</code> attributes, which we'll cover in more detail in our section on CSS.</p>
 
@@ -185,6 +185,8 @@
 <h3 id="terms"><a href="#terms">Terms you should know</a></h3>
 
 <dl>
+  <dt>HTML</dt>
+  <dd>Stands for HyperText Markup Language. A standard developed in 1991 by Tim Berners-Lee.</dd>
   <dt>element</dt>
   <dd>A component of an HTML page. Every HTML page is made up of elements.</dd>
   <dt>tag</dt>
@@ -192,7 +194,7 @@
   <dt>headers</dt>
   <dd>Also known as <strong>headings</strong>, although that terminology is getting outdated. Generally speaking, they describe the topic of a section. In decreasing order of priority, they go from <code class="inline-code">&lt;h1&gt;</code> to <code class="inline-code">&lt;h6&gt;</code>.</dd>
   <dt>anchor tags</dt>
-  <dd>More commonly known as links, represented by <code class="inline-code">&lt;a&gt;</code></dd>
+  <dd>More commonly known as links, represented by <code class="inline-code">&lt;a href="http://some-link.com"&gt;</code>.</dd>
   <dt>attribute</dt>
   <dd>A property of an HTML element, like the <code class="inline-code">href</code> in a link or the <code class="inline-code">src</code> in an image.</dd>
   <dt>nesting</dt>
@@ -225,7 +227,7 @@
 
 <h4>Checklist</h4>
 <ul>
-  <li>A header with your name in it</li>
+  <li>A header with your name in it.</li>
   <li>A picture of you. Or of your favorite food. Or your least favorite rapper.</li>
   <li>A paragraph describing yourself. Or your favorite food, or least favorite rapper.</li>
   <li>At least three links to other websites.</li>
@@ -241,8 +243,6 @@
     <div class="line"></div>
   </a>
 </div>
-
-<script src="/js/lib/prism.js"></script>
 {{/content}}
 
 {{/extend}}
