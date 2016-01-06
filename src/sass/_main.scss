@@ -152,10 +152,19 @@ a {
   }
 }
 
-ul {
+ul, ol {
   line-height: 1.6rem;
   list-style: initial;
+  padding: 0.5rem 0;
   padding-left: 2rem;
+}
+
+ol {
+  list-style-type: decimal;
+
+  &.roman {
+    list-style-type: lower-roman;
+  }
 }
 
 dl {

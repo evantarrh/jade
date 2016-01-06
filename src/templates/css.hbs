@@ -86,9 +86,9 @@
     font-size: 8px;
 }</code></pre>
 
-<p>Only the first paragraph will have a normal font-size&semi; the last three will be super small. But what about their color? The last three paragraphs all have two different rules that affect their color.</p>
+<p>Only the first paragraph will have a normal font-size&semi; the last three will be super small. But what about their color? The last three paragraphs all have two different rules that affect their color, so will this break?</p>
 
-<p>They're all blue! CSS is smarter than you might think, and it knows that the <code class="inline-code">.small</code> rule is more specific than the rule that applies to all paragraphs. Therefore, if there are any conflicts for a specific HTML element, CSS follows the most specific rule that applies to it.</p>
+<p>Nope! The last three paragraphs are all blue. CSS is smarter than you might think, and it knows that the <code class="inline-code">.small</code> rule is more specific than the rule that applies to all paragraphs. Therefore, if there are any conflicts for a specific HTML element, CSS follows the most specific rule that applies to it.</p>
 
 <!-- optional paragraph about how a `p` rule would be more specific than `body` here -->
 
@@ -136,7 +136,7 @@ h1, .big-red, .big-blue, .big-green {
 <p class="font-size-2">font-size: 18px;</p>
 <p class="font-size-3">font-size: 32px;</p>
 
-<p>Generally, the most readable size for text is around 18 or 20 <code class="inline-code">px</code>, but it will depend on the font and the context. Note that it a little change goes a long way when it comes to pixels!</p>
+<p>Generally, the most readable size for text is around 18 or 20 <code class="inline-code">px</code>, but it will depend on the font and the context. Note that a little change goes a long way when it comes to pixels!</p>
 
 <h4>line-height</h4>
 <p>This attribute will control the <strong>line-height</strong> of your text. Again, we'll use <code class="inline-code">px</code> as units. To help show this visually, I've changed the <code class="inline-code">background-color</code> of these next paragraphs&colon; something we'll talk about soon!</p>
@@ -146,7 +146,7 @@ You don't want your line-height to be less than your font-size. Readability shou
 <p class="line-height-2">line-height: 20px;<br>If your line-height is the same value as your font-size, it still might look cramped.</p>
 <p class="line-height-3">line-height: 40px;<br>Because double-spacing isn't just for making your essays hit ten pages! This can look awkward, too, though, so be careful.</p>
 
-<p>Some people believe that the ideal line-height is &lpar;font-size &times; 1.618&rpar;, which is the <a href="https://en.wikipedia.org/wiki/Golden_ratio" class="ALMIGHTY-GOLDEN-RATIO">golden ratio</a>. It does work surprisingly well, and it's how the text has been set for this tutorial all along.</p>
+<p>Some people believe that the ideal line-height is &lpar;font-size &times; 1.618&rpar;, which is the <a href="https://en.wikipedia.org/wiki/Golden_ratio" class="ALMIGHTY-GOLDEN-RATIO">golden ratio</a>. It does work remarkarbly well, and it's how the text has been set for this tutorial all along.</p>
 
 <h4>font-weight</h4>
 
@@ -206,13 +206,14 @@ You don't want your line-height to be less than your font-size. Readability shou
 <p class="with-list">Let's look at some examples of using colors in context.</p>
 <ul>
 <li><p>Setting text color</p>
-<p>We've done this before! You can set text color just by using the attribute <code class="inline-code">color</code>.</p>
+<p>We've done this before! You can set text color just by using the <code class="inline-code">color</code> attribute.</p>
 <pre><code class="language-css">.white-text {
     color: rgb(255, 255, 255);
 }</code></pre>
 </li>
+<p>A note about font color: black isn't always the best option on a white background, nor is white always the best option on a dark background. Using a light or dark gray will help soften any harsh contrast. The text you're reading now is actually a dark gray, <code class="inline-code">#222222</code>.
 <li><p>Setting a background color</p>
-<p>This will affect the background color of the selected element. You can set the background of your whole website just by changing the <code class="inline-code">background-color</code> of the body.</p>
+<p>This will affect the background color of the selected element. You can change the background of your whole website just by changing the <code class="inline-code">background-color</code> of the body.</p>
 <pre><code class="language-css">body {
     /* This will make your whole website neon green */
     /* Not a great idea */
@@ -227,9 +228,81 @@ You don't want your line-height to be less than your font-size. Readability shou
 
 <h3 id="position"><a href="#position">How do I position elements on a page?</a></h3>
 
-<p>CSS gives us many tools to solve the problem of putting something on a page.
-</p>
+<p>CSS gives us many tools to solve the problem of placing something on a page. Often, there are multiple solutions to the same problem.</p>
 
+<h4>Position</h4>
+<p><strong>Position</strong> is an important CSS attribute to understand. It only has a few possible values, but they are all very powerful. Let's look at the most relevant ones&colon;</p>
+<ol>
+  <li>
+    <p>Fixed</p>
+    <p>This is the easiest position to work with. A fixed element stays in the same visual spot on your browser no matter what. If you're ever on a website where the navigation stays at the top of the page while you're scrolling, that element is fixed.</p>
+    <p>To use this, you need to specify one or more of the following attributes: <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, <code class="inline-code">right</code>. Here's an example of a button that will stay in the bottom right of the page:</p>
+    <pre><code class="language-css">.button {
+    position: fixed;
+    /* the bottom of the button will always be
+        20px from the bottom of the window */
+    bottom: 20px;
+    /* the right edge of the button will always be
+        20px from the right side of the window */
+    right: 20px;
+}</code></pre>
+  </li>
+  <li>
+    <p>Absolute</p>
+    <p>This works a lot like <code class="inline-code">position: fixed</code>, except that instead of fixing an element to the window, it fixes an element to its parent, as long as the parent is <code class="inline-code">position: relative</code>. Once again, you'll generally need to specify one or more of <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, or <code class="inline-code">right</code>.</p>
+  </li>
+  <li>
+    <p>Relative</p>
+    <p>Relatively positioned elements generally behave as you'd expect them to. When you specify any position on a relatively positioned element &lpar;<code class="inline-code">left</code>, <code class="inline-code">right</code>, etc.&rpar;, everything else is positioned as though nothing has changed. In other words, <code class="inline-code">position: relative</code> is a good way to change the position of only one element.</p>
+
+  </li>
+</ol>
+
+<p>Position is a difficult attribute to visualize. I'd recommend checking out the <a href="https://css-tricks.com/almanac/properties/p/position/">CSS-Tricks</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN</a> articles on position to get a better picture. In general, <span class="major-key"><a href="https://css-tricks.com">CSS-Tricks</a> and <a href="https://developer.mozilla.org/en-US/">MDN</a> are excellent references for anything CSS-related</span>. I always learn something when I read an article from them.</p>
+
+<h4>Width and Height</h4>
+<p>You can specify both the width and height of HTML elements using these attributes. Use either <code class="inline-code">px</code> or <code class="inline-code">%</code> as units. <span class="major-key">When using <code class="inline-code">%</code>, bear in mind that the percentage is computed as the percentage of the parent element's width or height</span>.
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;p class="text"&gt;I am so tall&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+<pre><code class="language-css">.container {
+    height: 800px;
+}
+
+.text {
+    /* ends up being 800px, because its parent's height is 800px */
+    height: 100%;
+}</code></pre>
+
+<h4>Text-Align</h4>
+<p>This rule aligns text, like Microsoft Word or Google Docs. Possible values include <code class="inline-code">left</code>, <code class="inline-code">center</code>, <code class="inline-code">right</code>, and <code class="inline-code">justify</code>. Don't be a dingus, though&mdash;you should only ever use <code class="inline-code">left</code> and <code class="inline-code">center</code>.</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;div class="text-container"&gt;
+        &lt;p class="text"&gt;The Middle - Jimmy Eat World&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+<pre><code class="language-css">.text-container {
+    text-align: center;
+}</code></pre>
+
+<p>In the above example, note that we must set the paragraph's parent to <code class="inline-code">text-align: center</code>, not the paragraph itself! <code class="inline-code">Text-align</code> rules apply only to an element's children.</p>
+
+<h4>Padding and Margin</h4>
+<p>There's one more positioning trick we should be familiar with: using <strong>padding</strong> and <strong>margin</strong>. Units should be <code class="inline-code">px</code>.</p>
+
+<p>Padding adds space inside an element, and margin adds space around an element. Here's a helpful visualization:</p>
+
+<div class="image-wrapper"><img src="https://css-tricks.com/wp-content/csstricks-uploads/firebox.png"></div>
+
+<p>That box shows an HTML element with a <code class="inline-code">width</code> of <code class="inline-code">267px</code> and a <code class="inline-code">height</code> of <code class="inline-code">24px</code>. It has <code class="inline-code">6px</code> of <code class="inline-code">padding</code> on every side, no border or margin, and it has <code class="inline-code">top: 156px</code>.</p>
+
+<p>You can put padding on specific sides of an element by using <code class="inline-code">padding-right</code>, <code class="inline-code">padding-top</code>, <code class="inline-code">padding-left</code>, and <code class="inline-code">padding-bottom</code>&semi; same with margin. If the rule doesn't include a direction, like <code class="inline-code">margin: 5px;</code>, then it will apply <code class="inline-code">5px</code> of margin to every side of the element.</p>
 
 <div class="separator"></div>
 
@@ -270,7 +343,7 @@ jade/
 
 <div class="separator"></div>
 
-<p>Let's learn some words!</p>
+<p>Wow, we covered a lot of content! Now let's learn some words.</p>
 
 <h3 id="terms"><a href="#terms">CSS terms</a></h3>
 <dl>
@@ -290,11 +363,53 @@ jade/
   <dd>A format for describing colors&colon; <code class="inline-code">rgb(0, 0, 0)</code>. Each value can range from 0 to 255.</dd>
   <dt>Hex values/hex codes</dt>
   <dd>A more compact color format&colon; <code class="inline-code">#00FF00</code>. Works the same way as RGB&colon; the first two characters correspond to red, the next two correspond to blue, the last two correspond to green. Each pair of characters can range from <code class="inline-code">00</code> to <code class="inline-code">FF</code>.</dd>
+  <dt>Position</dt>
+  <dd>TODO</dd>
+  <dt>Padding</dt>
+  <dd>TODO</dd>
+  <dt>Margin</dt>
+  <dd>TODO</dd>
 </dl>
 
 <div class="separator"></div>
 
+<p>OK, let's goof around a little bit! I always find that when designing websites, and when using CSS in general, I get the best results when I try a lot of different things. So that's what we'll do now!</p>
+
 <h3 id="do-this"><a href="#do-this">Explore the wonderful world of CSS</a></h3>
+
+<p>For this mini-project, we'll be reusing the HTML page we created at the end of the last lesson.</p>
+
+<h4>Getting started</h4>
+<p>Create a new folder called &ldquo;css&rdquo; inside the same folder that contains your HTML file, then create a new file inside &ldquo;css&rdquo;. You can call it <code class="inline-code">style.css</code> if you're boring like me.</p>
+
+<p>In your HTML file, link to the new CSS file in the <code class="inline-code">head</code>, using the <a href="#linking">snippet from above</a>. Add a simple rule to your CSS, like making all the text enormous, then save everything and refresh. If you can't see the change visually, be extra careful about your directory structure and make sure the file name is spelled right in the HTML &lpar;case-sensitive!&rpar;.</p>
+
+<p>Once everything is linked properly, let's get started!</p>
+
+<h4>Tasks</h4>
+<p>These are all open-ended, so exploration is encouraged! If you get bored with something, move onto the next thing. The only goal here is to try enough things that you end up with something good and unexpected.</p>
+
+<ol>
+  <li>Use <a href="https://google.com/fonts">Google Fonts</a> to try out a couple of different font options for your website.</li>
+  <ul>
+    <li>For each font, try a couple of different sizes and weights. Also, try different combinations of header font-size and text font-size.</li>
+  </ul>
+  <li>Once you have a couple of different options for fonts, try at least four different color schemes, including background colors. Here's are some suggestions&colon;</li>
+  <ol class="roman">
+    <li>Use 4 different colors on your site</li>
+    <li>Use only 2. This is actually really hard!</li>
+    <li>Try a dark theme</li>
+    <li>Try using the color scheme of your favorite-designed website. <a href="https://buzzfeed.com">BuzzFeed</a> and <a href="https://lyft.com">Lyft</a> are two great places to start.</li>
+  </ol>
+  <li>Try out at least 3 different layouts. You can follow these suggestions, or get creative!</li>
+  <ol class="roman">
+    <li>Try putting your links at the bottom of the page.</li>
+    <li>Try putting everything in the middle of the page.</li>
+    <li>Try filling the page with your image, using <a href="https://css-tricks.com/perfect-full-page-background-image/">this guide</a>.</li>
+  </ol>
+</ol>
+
+<p>Once you've finished trying everything, see if you can decide on two or three different themes for your site. Create a separate CSS file for each theme&colon; that way, switching between themes on your HTML page will be as easy as changing the <code class="inline-code">link</code> snippet in the HTML!</p>
 
 
 {{/content}}
