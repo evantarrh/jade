@@ -19,7 +19,7 @@
 
 <p>That snippet of CSS will set the font size of all paragraphs on an HTML page to 20 pixels.</p>
 
-<p>More generally, a CSS <strong>rule</strong> is formatted like so:</p>
+<p>More generally, a CSS <strong>rule</strong> is formatted like this:</p>
 
 <pre><code class="language-css">[selector] {
     [property]: [value];
@@ -27,11 +27,11 @@
     [any arbitrary number of property/value pairs]
 }</code></pre>
 
-<p>CSS has a strange learning curve, because almost none of the knowledge is conceptual&semi; instead, learning CSS comes down to getting familiar with a lot of different rules, and trying a lot of different solutions when problems come up. Once again, Google will be your friend!</p>
+<p>CSS has a strange learning curve, because almost none of the knowledge is conceptual&semi; instead, learning CSS comes down to getting familiar with a lot of different properties one at a time, and trying a lot of different solutions when problems come up. Once again, Google will be your friend!</p>
 
 <div class="separator"></div>
 
-<p>In order to write CSS, we have to get familiar with <strong>selectors</strong>&colon; the string that determines which elements your CSS rules are applied to.</p>
+<p>In order to write CSS, we have to get familiar with <strong>selectors</strong>&colon; the strings that determine which elements your CSS rules are applied to.</p>
 
 <p><pre><code class="language-css">[selector] {
     [property/value pairs]
@@ -45,11 +45,11 @@
 
 <p>In the first example on this page, the selector was just one character long: <code class="inline-code">p</code>. That selector means that the CSS rule applies to all <code class="inline-code">&lt;p&gt;</code>'s on the page.</p>
 
-<p>We can do the same thing with any HTML element&colon; <code class="inline-code">a</code>, <code class="inline-code">h1</code>, <code class="inline-code">body</code>, you name it. However, it's important to note that <span class="major-key">any CSS rule will apply not only to the selected elements, but also to their children.</span> For example, check out the following rule:</p>
+<p>We can do the same thing with any HTML element&colon; <code class="inline-code">a</code>, <code class="inline-code">h1</code>, <code class="inline-code">body</code>, you name it. However, it's important to note that <span class="major-key">many CSS rules will apply not only to the selected elements, but also to their children.</span> For example, check out the following rule:</p>
 <pre><code class="language-css">body {
     color: red; /* the "color" rule sets text color */
 }</code></pre>
-<p>This will make all of your website's text red, because all of the content is nested inside the <code class="inline-code">body</code>.</p>
+<p>This will make all of your website's text red, because all of the page's content is nested inside the <code class="inline-code">body</code>.</p>
 
 <h4>Classes</h4>
 
@@ -57,7 +57,7 @@
 
 <pre><code class="language-markup">&lt;body&gt;
     &lt;p&gt;This is a normal paragraph.&lt;/p&gt;
-    &lt;p class=&ldquo;special&rdquo;&gt;This paragraph is special, mmkay.&lt;/p&gt;
+    &lt;p class=&ldquo;special&rdquo;&gt;This paragraph is special, mmkay?&lt;/p&gt;
 &lt;/body&gt;</code></pre>
 <pre><code class="language-css">p {
     color: red;
@@ -69,7 +69,7 @@
 
 <p>A class is just another attribute of HTML elements. In order to use a class as a CSS selector, all you need to do is add a <code class="inline-code">.</code> to the beginning of the class name in your CSS.</p>
 <p>In the example above, both paragraphs will be red, because the <code class="inline-code">color: red</code> rule applies to every <code class="inline-code">&lt;p&gt;</code> element. But only the second paragraph will have a larger-than-normal font-size.</p>
-<p>You can apply a certain class to as many HTML elements as you need to. Let's look at another example:</p>
+<p>You can apply any class to as many HTML elements as you want. Let's look at another example:</p>
 
 <pre><code class="language-markup">&lt;body&gt;
     &lt;p&gt;I'm a normal paragraph.&lt;/p&gt;
@@ -86,9 +86,11 @@
     font-size: 8px;
 }</code></pre>
 
-<p>Only the first paragraph will have a normal font-size&semi; the last three will be super small. But what about their color? The last three paragraphs all have two different rules that affect their color, so will this break?</p>
+<p>Only the first paragraph will have a normal font-size&semi; the last three will be super small.</p>
 
-<p>Nope! The last three paragraphs are all blue. CSS is smarter than you might think, and it knows that the <code class="inline-code">.small</code> rule is more specific than the rule that applies to all paragraphs. Therefore, if there are any conflicts for a specific HTML element, CSS follows the most specific rule that applies to it.</p>
+<p>But what about their color? The last three paragraphs have two different rules that affect their color&colon; all <code class="inline-code">&lt;p&gt;</code>'s have <code class="inline-code">color: red</code>, but all elements with the <code class="inline-code">small</code> class have <code class="inline-code">color: blue</code>. Will this break something?</p>
+
+<p>Nope&mdash;the last three paragraphs are all blue! CSS is smarter than you might think, and it knows that the <code class="inline-code">.small</code> rule is more specific than the rule that applies to all paragraphs. Therefore, if there are any conflicts for a specific HTML element, CSS follows the most specific rule that applies to it.</p>
 
 <!-- optional paragraph about how a `p` rule would be more specific than `body` here -->
 
@@ -123,7 +125,7 @@ h1, .big-red, .big-blue, .big-green {
 
 <div class="separator"></div>
 
-<p>Now, we're ready to talk about the different kinds of properties you can set using CSS! There is a truly enormous number of them, so let's focus on three different kinds of properties: text, colors, and positioning.</p>
+<p>Now, we're ready to talk about the different kinds of properties you can set using CSS! There is a truly enormous number of them, so let's focus on three different categories: text, colors, and positioning.</p>
 
 <h3 id="type"><a href="#type">How can I customize text with CSS?</a></h3>
 
@@ -139,7 +141,7 @@ h1, .big-red, .big-blue, .big-green {
 <p>Generally, the most readable size for text is around 18 or 20 <code class="inline-code">px</code>, but it will depend on the font and the context. Note that a little change goes a long way when it comes to pixels!</p>
 
 <h4>line-height</h4>
-<p>This attribute will control the <strong>line-height</strong> of your text. Again, we'll use <code class="inline-code">px</code> as units. To help show this visually, I've changed the <code class="inline-code">background-color</code> of these next paragraphs&colon; something we'll talk about soon!</p>
+<p>This attribute will control the <strong>line-height</strong> of your text. Again, we'll use <code class="inline-code">px</code> as units. To help show this visually, I've changed the <code class="inline-code">background-color</code> of these next paragraphs, which we'll talk about soon!</p>
 
 <p class="line-height-1">line-height: 15px;<br>
 You don't want your line-height to be less than your font-size. Readability should always be your priority.</p>
@@ -165,21 +167,23 @@ You don't want your line-height to be less than your font-size. Readability shou
 <h4>font-family</h4>
 <p>Font-family might be the most important attribute, because it lets use choose our actual font! There are several built-in fonts that will work in any browser &lpar;of which Times New Roman is the most infamous&rpar;, but we can do better than that.</p>
 
-<p>font-family: Lato</p>
+<p class="font-family-1">font-family: Times New Roman</p>
+<p class="font-family-2">font-family: Helvetica</p>
+<p class="font-family-3">font-family: Lato</p>
 
-<p>Thanks to <a href="https://google.com/fonts">Google Fonts</a>, I can use a font I love, called Lato. Google Fonts gives you free access to thousands of different fonts, and it's extremely useful. It's easy to use&colon; once you select a font and some weights, all you have to do is put the HTML snippet they give you in your website's <code class="inline-code">head</code>! Here's the one I use for this website:</p>
+<p>Lato isn't a built-in font, but I can use it thanks to <a href="https://google.com/fonts">Google Fonts</a>. Google Fonts gives you free access to thousands of different fonts, and it's extremely useful. It's easy to use&colon; once you select a font and some weights, all you have to do is insert an HTML snippet&mdash;which they provide for you&mdash;into your website's <code class="inline-code">head</code>! Here's the one I use for this website:</p>
 
-<pre><code class="language-markup">&lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic' rel='stylesheet' type='text/css'&gt;</code></pre>
+<pre><code class="language-markup">&lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'&gt;</code></pre>
 
 <p>That snippet of HTML is all I need to use Lato at different weights.</p>
 
 <div class="separator"></div>
 
-<p>Now that we have some typesetting skills, let's take a look at colors! Websites shouldn't have to be black and white.</p>
+<p>Now that we have some typesetting skills, let's take a look at colors! Nothing in life is black and white, so your website shouldn't be either.</p>
 
 <h3 id="color"><a href="#color">How do colors work in CSS?</a></h3>
 
-<p>While it's possible to make a paragraph <code class="inline-code">red</code>, you will quickly find that that won't offer you a whole lot of creativity. CSS allows you to be much more specific than that!</p>
+<p>While it's possible to make a paragraph red using <code class="inline-code">color: red</code>, you will quickly find that that won't offer you a whole lot of creativity. CSS allows you to be much more specific than that!</p>
 
 <h4>RGB</h4>
 <p>There are several options for syntax, but a good alternative is <strong>RGB</strong>, where you specify a value between 0 and 255 for red, green, and blue.</p>
@@ -197,7 +201,7 @@ You don't want your line-height to be less than your font-size. Readability shou
 <p class="color-2">color: #0000FF;</p>
 <p class="color-3">color: #2A88FC;</p>
 
-<p>Hex codes work the same way as RGB, assigning values from 0 to 255 to red, green, and blue. However, hex uses just two characters for each: they're numbers in <a href="https://en.wikipedia.org/wiki/Hexadecimal">base 16</a>. The second example above, <code class="inline-code">#0000FF</code>, translates to <code class="inline-code">rgb(0, 0, 255)</code>. The first two numbers, <code class="inline-code">00</code>, translate to a red value of 0&semi; the second two numbers, <code class="inline-code">00</code>, translate to a green value of 0&semi; and the final two numbers, <code class="inline-code">FF</code>, translate to a blue value of 255.</p>
+<p>Hex codes work the same way as RGB, where red, green, and blue each get a value from 0 to 255. However, hex uses just two characters for each: they're numbers in <a href="https://en.wikipedia.org/wiki/Hexadecimal">base 16</a>. The second example above, <code class="inline-code">#0000FF</code>, translates to <code class="inline-code">rgb(0, 0, 255)</code>. The first two numbers, <code class="inline-code">00</code>, translate to a red value of 0&semi; the second two numbers, <code class="inline-code">00</code>, translate to a green value of 0&semi; and the final two numbers, <code class="inline-code">FF</code>, translate to a blue value of 255.</p>
 
 <p></p>
 
@@ -213,7 +217,7 @@ You don't want your line-height to be less than your font-size. Readability shou
 </li>
 <p>A note about font color: black isn't always the best option on a white background, nor is white always the best option on a dark background. Using a light or dark gray will help soften any harsh contrast. The text you're reading now is actually a dark gray, <code class="inline-code">#222222</code>.
 <li><p>Setting a background color</p>
-<p>This will affect the background color of the selected element. You can change the background of your whole website just by changing the <code class="inline-code">background-color</code> of the body.</p>
+<p>Every element has a default background color of white, but it's easy to change. You can change the background of your whole website just by changing the <code class="inline-code">background-color</code> of the body.</p>
 <pre><code class="language-css">body {
     /* This will make your whole website neon green */
     /* Not a great idea */
@@ -234,9 +238,9 @@ You don't want your line-height to be less than your font-size. Readability shou
 <p><strong>Position</strong> is an important CSS attribute to understand. It only has a few possible values, but they are all very powerful. Let's look at the most relevant ones&colon;</p>
 <ol>
   <li>
-    <p>Fixed</p>
+    <p><code class="inline-code">position: fixed</code></p>
     <p>This is the easiest position to work with. A fixed element stays in the same visual spot on your browser no matter what. If you're ever on a website where the navigation stays at the top of the page while you're scrolling, that element is fixed.</p>
-    <p>To use this, you need to specify one or more of the following attributes: <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, <code class="inline-code">right</code>. Here's an example of a button that will stay in the bottom right of the page:</p>
+    <p>To use this, you also need to specify one or more of the following attributes: <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, <code class="inline-code">right</code>. Here's an example of a button that will stay in the bottom right of the page:</p>
     <pre><code class="language-css">.button {
     position: fixed;
     /* the bottom of the button will always be
@@ -248,12 +252,12 @@ You don't want your line-height to be less than your font-size. Readability shou
 }</code></pre>
   </li>
   <li>
-    <p>Absolute</p>
-    <p>This works a lot like <code class="inline-code">position: fixed</code>, except that instead of fixing an element to the window, it fixes an element to its parent, as long as the parent is <code class="inline-code">position: relative</code>. Once again, you'll generally need to specify one or more of <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, or <code class="inline-code">right</code>.</p>
+    <p><code class="inline-code">position: absolute</code></p>
+    <p>This works a lot like <code class="inline-code">position: fixed</code>, except that instead of fixing an element to the window, it fixes an element to its parent, as long as the parent is <code class="inline-code">position: relative</code>. Once again, you'll generally need to also specify one or more of <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, or <code class="inline-code">right</code>.</p>
   </li>
   <li>
-    <p>Relative</p>
-    <p>Relatively positioned elements generally behave as you'd expect them to. When you specify any position on a relatively positioned element &lpar;<code class="inline-code">left</code>, <code class="inline-code">right</code>, etc.&rpar;, everything else is positioned as though nothing has changed. In other words, <code class="inline-code">position: relative</code> is a good way to change the position of only one element.</p>
+    <p><code class="inline-code">position: relative</code></p>
+    <p>Relatively positioned elements generally behave as you'd expect them to. When you specify any position on a relatively-positioned element &lpar;<code class="inline-code">left</code>, <code class="inline-code">right</code>, etc.&rpar;, everything else is positioned by ignoring the changes to the relatively-positioned element. In other words, <code class="inline-code">position: relative</code> is a good way to change the position of only one element.</p>
 
   </li>
 </ol>
@@ -300,7 +304,7 @@ You don't want your line-height to be less than your font-size. Readability shou
 
 <div class="image-wrapper"><img src="https://css-tricks.com/wp-content/csstricks-uploads/firebox.png"></div>
 
-<p>That box shows an HTML element with a <code class="inline-code">width</code> of <code class="inline-code">267px</code> and a <code class="inline-code">height</code> of <code class="inline-code">24px</code>. It has <code class="inline-code">6px</code> of <code class="inline-code">padding</code> on every side, no border or margin, and it has <code class="inline-code">top: 156px</code>.</p>
+<p>That model shows an HTML element with a <code class="inline-code">width</code> of <code class="inline-code">267px</code> and a <code class="inline-code">height</code> of <code class="inline-code">24px</code>. It has <code class="inline-code">6px</code> of <code class="inline-code">padding</code> on every side, no border or margin, and it has <code class="inline-code">top: 156px</code>. You can actually see this box model for any HTML element by right-clicking the element and choosing <code class="inline-code">inspect element</code>!</p>
 
 <p>You can put padding on specific sides of an element by using <code class="inline-code">padding-right</code>, <code class="inline-code">padding-top</code>, <code class="inline-code">padding-left</code>, and <code class="inline-code">padding-bottom</code>&semi; same with margin. If the rule doesn't include a direction, like <code class="inline-code">margin: 5px;</code>, then it will apply <code class="inline-code">5px</code> of margin to every side of the element.</p>
 
@@ -332,9 +336,9 @@ jade/
   - git.html
   - nextsteps.html</code></pre>
 
-<p>Each HTML file links to that same CSS file.</p>
+<p>Each HTML file links to the same CSS file.</p>
 
-<p>An important note is that I also use a font from Google Fonts. <span class="major-key">To use a Google Font, you must import the font before importing the CSS file</span>, like so:</p>
+<p>An important note is that I also use a font from Google Fonts. <span class="major-key">To use Google Fonts, you must import the font before importing the CSS file</span>, like so:</p>
 <pre><code class="language-markup">&lt;head&gt;
     &lt;title&gt;Kylo Ren's Personal Blog&lt;/title&gt;
     &lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'&gt;
@@ -354,9 +358,9 @@ jade/
   <dt>selector</dt>
   <dd>A string that specifies HTML elements.</dd>
   <dt>class</dt>
-  <dd>A special HTML attribute that makes it easy to select a group using CSS.</dd>
+  <dd>A special HTML attribute that makes it easy to select a group of elements with CSS.</dd>
   <dt>unit</dt>
-  <dd>Most CSS values require units, like <code class="inline-code">px</code>.</dd>
+  <dd>Most CSS values require units, like <code class="inline-code">px</code> or <code class="inline-code">%</code>.</dd>
   <dt>line-height</dt>
   <dd>The vertical space taken up by each line of text in an HTML element.</dd>
   <dt>RGB</dt>
@@ -364,11 +368,11 @@ jade/
   <dt>Hex values/hex codes</dt>
   <dd>A more compact color format&colon; <code class="inline-code">#00FF00</code>. Works the same way as RGB&colon; the first two characters correspond to red, the next two correspond to blue, the last two correspond to green. Each pair of characters can range from <code class="inline-code">00</code> to <code class="inline-code">FF</code>.</dd>
   <dt>Position</dt>
-  <dd>TODO</dd>
+  <dd>A property that determines how an element's position is calculated. You should be familiar with the values <code class="inline-code">fixed</code>, <code class="inline-code">relative</code>, and <code class="inline-code">absolute</code>.</dd>
   <dt>Padding</dt>
-  <dd>TODO</dd>
+  <dd>Spacing between an element's content and its border.</dd>
   <dt>Margin</dt>
-  <dd>TODO</dd>
+  <dd>Space outside of an element's border.</dd>
 </dl>
 
 <div class="separator"></div>
@@ -394,7 +398,7 @@ jade/
   <ul>
     <li>For each font, try a couple of different sizes and weights. Also, try different combinations of header font-size and text font-size.</li>
   </ul>
-  <li>Once you have a couple of different options for fonts, try at least four different color schemes, including background colors. Here's are some suggestions&colon;</li>
+  <li>Once you have a couple of different options for fonts, try at least four different color schemes, including background colors. Here are some suggestions&colon;</li>
   <ol class="roman">
     <li>Use 4 different colors on your site</li>
     <li>Use only 2. This is actually really hard!</li>
@@ -409,7 +413,7 @@ jade/
   </ol>
 </ol>
 
-<p>Once you've finished trying everything, see if you can decide on two or three different themes for your site. Create a separate CSS file for each theme&colon; that way, switching between themes on your HTML page will be as easy as changing the <code class="inline-code">link</code> snippet in the HTML!</p>
+<p>Once you've finished trying everything, see if you can decide on two or three different themes for your site. Then, create a separate CSS file for each theme&colon; that way, switching between themes on your HTML page will be as easy as changing the <code class="inline-code">link</code> snippet in the HTML!</p>
 
 
 {{/content}}
