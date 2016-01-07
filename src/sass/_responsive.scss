@@ -3,7 +3,7 @@
     font-size: 20px;
   }
 
-  #burger {
+  .burger {
     left: 25px;
     top: 30px;
   }
@@ -29,7 +29,7 @@
     transition: none;
   }
 
-  #burger {
+  .burger {
     background-color: $white;
     left: 0;
     padding: 20px;

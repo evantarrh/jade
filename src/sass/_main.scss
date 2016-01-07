@@ -40,7 +40,7 @@ a {
   display: none;
 }
 
-#burger {
+.burger {
   background: $transparent;
   cursor: pointer;
   left: 45px;
@@ -178,4 +178,8 @@ dl {
     padding-bottom: 0.5rem;
     padding-left: 1rem;
   }
+}
+
+.twitter-tweet {
+  margin: 1rem auto;
 }
