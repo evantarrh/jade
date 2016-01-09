@@ -36,6 +36,7 @@ h3, %h3 {
 
   a {
     border-bottom: 3px solid $transparent;
+    position: relative;
 
     &:hover {
       border-bottom: 3px solid $jade;
