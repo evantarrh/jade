@@ -8,27 +8,92 @@
 
 <p>From an early age, it is instilled into us that we must always <code class="inline-code">command-S</code> every chance we get, so that we don't lose precious work. But what if we want to work on two versions of a project simultaneously? Or we're working with 4 other people, all on the same file? Or 100 people? The need for <strong>version control</strong> is great, and Git is our savior.</p>
 
-<p>A long time ago, I told you to install <a href="//git-scm.com/book/en/v2/Getting-Started-Installing-Git">git</a> and register for <a href="https://github.com">GitHub</a>, so if you haven't already, do so now! You'll need them to get through the lesson&semi; instead of going through content and then doing a mini-project at the end, this will be a little more interactive.</p>
+<p>A long time ago, I told you to set up <a href="https://help.github.com/articles/set-up-git/">git</a> and register for <a href="https://github.com">GitHub</a>, so if you haven't already, do so now! You'll need them to get through the lesson&semi; instead of going through content and then doing a mini-project at the end, this will be a little more interactive.</p>
 
 <p>Mac users, open your terminals&semi; Windows users, open Command Prompt. Let's get to it!</p>
 
 <div class="separator"></div>
 
-<p>More content soon!</p>
+<h3 id="terminal"><a href="#terminal">Navigation in the terminal</a></h3>
+<p>Before we start looking at Git, let's make sure we have enough knowledge about our terminal to be able to move around folders and files.</p>
 
-<!-- create a repo username.github.io
+<h4>pwd</h4>
 
-git clone
+<p>If you're a Mac user, in your terminal, type <code class="inline-code">pwd</code> and press enter. This is the first of several <strong>commands</strong> we'll cover, and it shows you exactly where you are in your terminal. That's why the command is called <code class="inline-code">pwd</code>&colon; it stands for Print Working Directory.</p>
 
-git add
+<p>Windows users won't have to worry about <code class="inline-code">pwd</code>, because Command Prompt will always show your complete location.</p>
 
-git commit
+<p><span class="major-key">If you're ever confused or want to learn more about a specific command, just run <code class="inline-code">man [command]</code> on Macs, or <code class="inline-code">HELP [command]</code> on Windows</span>. For example, you can type <code class="inline-code">man ls</code> and you'll see more information than you'd ever want to know about <code class="inline-code">ls</code>! On Macs, you'll have to press <code class="inline-code">q</code> in order to exit the manual view.</p>
 
+<h4>ls</h4>
+<p>Once you've figured out what directory you're in inside your terminal, run <code class="inline-code">ls</code> (<code class="inline-code">dir</code> on Windows). You'll see a list of all the files and folders inside your current directory.</p>
+
+<h4>cd</h4>
+<p>Now that you can see all your files and folders, we'll talk about navigating between folders. If you've just run <code class="inline-code">ls</code> or <code class="inline-code">dir</code>, you'll be able to see a bunch of folders, like Documents and Downloads. Try running <code class="inline-code">cd Documents</code> now. This will bring you into the Documents folder, and you can <code class="inline-code">ls</code> or <code class="inline-code">dir</code> to see how poorly organized your Documents folder is.</p>
+
+<p>To get back to where you were, type <code class="inline-code">cd ..</code>&colon; <code class="inline-code">..</code> always stands for the parent directory, and <code class="inline-code">.</code> always stands for the current directory.</p>
+
+<h4>subl</h4>
+<p>We'll cover one more command, and it's actually a command we'll install ourselves! For Mac users, run the following command (don't worry about understanding it)&colon;
+
+<pre><code class="language-bash">ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" ~/bin/subl</code></pre>
+
+<p>For Windows users, follow <a href="https://scotch.io/tutorials/open-sublime-text-from-the-command-line-using-subl-exe-windows">this tutorial</a>.</p>
+
+<p>Now, we'll be able to open files with Sublime right from the command line! Just type <code class="inline-code">subl [filename]</code> to do so. If you type <code class="inline-code">subl .</code>, Sublime will automatically open all files in your current folder. Super userful!</p>
+
+<div class="separator"></div>
+
+<p>OK, now we're ready to get started with git!</p>
+
+<h3 id="intro"><a href="#intro">Creating and cloning your first repo</a></h3>
+
+<p>First, login to GitHub and create a new <strong>repository</strong>. Name the repository [username].github.io, make it public, and check the box that says &ldquo;Initialize this repository with a README&rdquo;.</p>
+
+<p>Once you've created the repository (<strong>repo</strong> for short), GitHub will take you to the repo's freshly created page. Find the box on the page that contains a link&semi; it should look like this&colon;</p>
+
+<div class="image-wrapper">
+  <img src="img/clone.png">
+</div>
+
+<p>Copy the link, then open your terminal, navigate to a folder where you're comfortable keeping coding projects, and run the following command&colon;</p>
+
+<pre><code class="language-bash">git clone [link-you-copied]</code></pre>
+
+<p>This will copy the <strong>repository</strong> and all its contents onto your computer, and it'll create a new folder inside whatever folder you ran <code class="inline-code">git clone</code> from.</p>
+
+<p>You can do this with any project on GitHub, whether or not it belongs to you. People who use GitHub to store their projects are participating in <strong>open source</strong> development, so that everyone can contribute to everyone else's projects. Now you're entering into that world!</p>
+
+<h3 id="commiting"><a href="#commiting">Committing changes to a project</a></h3>
+
+<p>While you should still be saving your work habitually, Git enables you to have certain checkpoints. Whenever you feel that you've completed a task, solved a problem, or you just want to save the work that you've done as a complete unit, you make a Git <strong>commit</strong>.</p>
+
+<p>There are a couple of different steps to doing this. First, let's get our repository to a state that's ready to be committed. Right now, if you <code class="inline-code">ls</code> or <code class="inline-code">dir</code> inside the directory you just cloned, there should only be one file&colon; README.md. Let's fix that by adding an <code class="inline-code">index.html</code>! You can either reuse your HTML from our assignments or create something new, but it doesn't matter as long as you save it in your <code class="inline-code">username.github.io</code> folder.</p>
+
+<h4>git status</h4>
+
+<p>Now, try running the following command&colon; <code class="inline-code">git status</code>. Your terminal will respond with some information&semi; importantly, it tells us that we have &ldquo;untracked files&rdquo;. Don't worry about the other information for now.</p>
+
+<p><code class="inline-code">git status</code> is a really important command, because it shows us what Git thinks the current state of the repository is. It's a powerful debugging tool, and also helps us understand what other git commands are actually doing behind the scenes.</p>
+
+<h4>git add</h4>
+
+<p>Let's run another command&colon; <code class="inline-code">git add index.html</code>. Now, if we run <code class="inline-code">git status</code> again, we'll see that we no longer have any untracked files&semi; instead, we have a section called &ldquo;Changes to be committed&rdquo;, and it tells us that Git is now aware of a new file called <code class="inline-code">index.html</code>. We would say that <code class="inline-code">index.html</code> is now <strong>staged</strong> to be committed.</p>
+
+<p>You can stage all of the files in a directory by running <code class="inline-code">git add -A</code>.</p>
+
+<h4>git commit</h4>
+
+<p>So what does it mean for a file to be staged to be committed? It means that if we run <code class="inline-code">git commit</code>, our changes will be included in that commit, which, like I mentioned before, is essentially a checkpoint for our repo. Let's do this now by running <code class="inline-code">git commit -m "Create index.html"</code>. Whenever you make a commit, you include a commit message that explains the changes you've made.</p>
+
+<h4>git log</h4>
+
+<p></p>
+
+<!--
 git push
 
 ...
-
-git log
 
 git diff
 
