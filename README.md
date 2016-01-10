@@ -1,7 +1,7 @@
-TITLE
+From 0 to Website
 ========================================
 
-TITLE is built using [Gulp][gulp], [Handlebars.js][handlebars], and [SCSS][scss].
+This curriculum is built using [Gulp][gulp], [Handlebars.js][handlebars], and [SCSS][scss]. It makes heavy use of [Minimill's project template][minimill].
 
 ## Setup
 
@@ -21,7 +21,7 @@ gulp serve
 
 ## Gulp
 
-An overview of Gulp commands available:
+Relevant gulp commands:
 
 ### `gulp build`
 
@@ -31,23 +31,26 @@ Builds the site into the `dist` directory.  This includes:
 - JS linting and uglification
 - Handlebars to HTML
 
-### `gulp build:optimized`
-
-This is used for distributing an optimized version of the site (for deployment).  It includes everything from `gulp build` as well as:
-- SCSS minification
-- CSS / JS inline-sourcing 
-
-### `gulp watch`
-
-Watchs for changes in local files and rebuilds parts of the site as necessary, into the `dist` directory.
-
 ### `gulp serve`
 
 Runs `gulp watch` in the background, and serves the `dist` directory at `localhost:3000` with automatic reloading using [Browsersync][browsersync].
 
-### `gulp deploy`
+## Deploying
 
-For use by the Minimill team only.  Deploys to `work.minimill.co/TITLE/`, but won't do so without proper authentication.
+Deploying to GitHub pages is a little bit of a pain because of relative paths. Here's the current workflow, after committing a fix or change to `master`:
+
+1. `git checkout gh-pages`
+2. `git reset --hard master`
+3. (Correct relative paths in `base.hbs` and `_main.scss` by appending `jade/` to the front)
+4. `gulp build`
+5. `mv dist/* ./`
+6. `git add -A`
+7. `git commit -m "Excellent fix"`
+8. `git push -f origin gh-pages`
+
+And you done.
+
+If you REALLY want to contribute, maybe you can make some configs that will solve this problem...
 
 ## Structure
 
@@ -71,3 +74,4 @@ For use by the Minimill team only.  Deploys to `work.minimill.co/TITLE/`, but wo
 [handlebars]: http://handlebarsjs.com/
 [npm-install]: https://nodejs.org/en/download/
 [scss]: http://sass-lang.com/
+[minimill]: https://github.com/minimill/project-template/
