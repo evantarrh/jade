@@ -3,7 +3,7 @@
 {{#content "main" mode="prepend"}}
 <div class="headers hide-mobile">
   <h1>JavaScript</h1>
-  <h2>Build fully-fledged web applications</h2>
+  <h2>Your website just got more fun</h2>
 </div>
 
 <p>Believe it or not, we already have most of the tools we need to make a fully-functioning website. However, HTML and CSS impose some frustrating restrictions on web development that get completely blown away when you have some familiarity with JavaScript.</p>
@@ -87,7 +87,7 @@ console.log(numbers[1]);</code></pre>
 
 <div class="separator"></div>
 
-<h3 id="linking"><a href="linking">Putting JavaScript on your website</a></h3>
+<h3 id="linking"><a href="#linking">Putting JavaScript on your website</a></h3>
 <p>Inserting JavaScript into a website is pretty similar to linking to a CSS file. Use a <code class="inline-code">script</code> element to include your file right at the bottom of your <code class="inline-code">body</code>&colon;</p>
 
 <pre><code class="language-markup">&lt;!DOCTYPE html&gt;
@@ -111,7 +111,7 @@ console.log(numbers[1]);</code></pre>
     - index.js
   - index.html</code></pre>
 
-<h3 id="jquery"><a href="jquery">jQuery is your friend</a></h3>
+<h3 id="jquery"><a href="#jquery">jQuery is your friend</a></h3>
 
 <p>jQuery makes JavaScript easier to use. With jQuery, selecting all the paragraphs on a page is as easy as <code class="inline-code">$('p')</code>, where the pure-JS analog would look like <code class="inline-code">document.getAllElementsByTagName('p')</code>. Anytime you see or use a <code class="inline-code">$</code> in JavaScript, that means you're using some features from jQuery.</p>
 
@@ -165,7 +165,7 @@ $('h3').after('&lt;p&gt;Time to learn!&lt;/p&gt;')&semi;</code></pre>
 
 <p>The opportunities are endless! The world is your oyster!</p>
 
-<h3 id="events"><a href="events"><span class="major-key">Handling events with jQuery is a major key</span></a></h3>
+<h3 id="events"><a href="#events"><span class="major-key">Handling events with jQuery is a major key</span></a></h3>
 <p>What we've seen so far makes it easy to do some silly things. But what if we could manipulate HTML elements depending on what the user does? Suddenly, we'd have a lot more power. That's what <strong>events</strong> are for! Let's take a look at an example.</p>
 
 <pre><code class="language-javascript">$('.inline-code').on('click', function() {
@@ -194,7 +194,7 @@ $('.inline-code')&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot
 </ul>
 
 
-<h3 id="styles"><a href="styles">Manipulating CSS with jQuery</a></h3>
+<h3 id="styles"><a href="#styles">Manipulating CSS with jQuery</a></h3>
 
 <p>One of the most useful things you can do with jQuery is changing CSS based on certain events. Just like we can manipulate HTML content with <code class="inline-code">html</code>, we can change all kinds of CSS using <code class="inline-code">css</code>.</p>
 <pre><code class="language-javascript">$('p').on('click', function() {
@@ -218,7 +218,7 @@ $('.inline-code')&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot
 });</code></pre>
 <p>Now, instead of manipulating CSS attributes directly with JavaScript, we're just changing whether each element has a class applied to it. <code class="inline-code">toggleClass</code> is extremely useful.</p>
 
-<h3 id="animation"><a href="animation">Animating things with jQuery</a></h3>
+<h3 id="animation"><a href="#animation">Animating things with jQuery</a></h3>
 <p>One of the most fun, and equally useless, things you can do with jQuery is animation! jQuery makes this incredibly easy. The code looks a lot like changing CSS, but you must also provide the number of milliseconds you want the animation to take.</p>
 
 <pre><code class="language-javascript">$('h3').on('mouseover', function() {
@@ -266,7 +266,7 @@ $('.language-javascript').on('click', function() {
 
 <p>Cool! We've put together a pretty hilarious toolbox of effects with jQuery. Let's review some language from this lesson, then dive into a mini-project.</p>
 
-<h3 id="terms"><a href="terms">Terms</a></h3>
+<h3 id="terms"><a href="#terms">Terms</a></h3>
 
 <dl>
   <dt>JavaScript</dt>
@@ -297,19 +297,17 @@ $('.language-javascript').on('click', function() {
   <dd>A function that gets executed once the current function has finished.</dd>
 </dl>
 
-<h3 id="do-it-just-do-it"><a href="do-it-just-do-it">Very Serious Assignment</a></h3>
+<h3 id="do-it-just-do-it"><a href="#do-it-just-do-it">Very Serious Assignment</a></h3>
 <h4>Getting started</h4>
 <p>To get started, make sure your directory structure looks like what we covered <a href="#linking">above</a>, and make sure your HTML file links to both jQuery and to your own JavaScript file.</p>
 
 <h4>Your mission</h4>
-<p>Let's do some fun stuff with jQuery! Like all our assignments have been, this one will be pretty open-ended&colon; spend at least 45 minutes goofing around with the effects we talked about.</p>
-<p>On the other hand, if you're the kind of person (like me, honestly) who might need more direction, try spending your time on these tasks:</p>
-
+<p>Let's do some fun stuff with jQuery! Like all our assignments have been, this one will be pretty open-ended&colon; all I ask is that you spend at least 45 minutes goofing around with the effects we talked about. If you want some inspiration, here are some ideas!</p>
 <ul>
   <li>Make some links titled "Facebook", "Twitter", "LinkedIn"&mdash;normal social media outlets or whatever. When the user clicks on the link, though, instead of taking them to Facebook or Twitter or whatever garbage company, just change the link's HTML content to be a description of what the product does.</li>
   <li>Design your website so that when everything loads at first, all the user sees is white. But over the course of one minute, your content gradually fades in, ever so slowly.</li>
   <li>Make a "dark theme" button that toggles your website between light and dark themes. See how I used that word "toggle"?</li>
-  <li>Make a "sith mode" button that toggles your website between light and dark themes, and also replaces all your images with pictures of Kylo Ren looking sad. (This one is a little harder, but I put it here anyway because I really want to see it in real life.)</li>
+  <li>Make a "sith mode" button that toggles your website between light and dark themes, where the dark theme also replaces all your images with pictures of Kylo Ren looking sad. (This one is a little harder, but I put it here anyway because I really want to see it in real life.)</li>
 </ul>
 
 
