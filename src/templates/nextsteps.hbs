@@ -6,15 +6,64 @@
   <h2>Domains, collaboration, and more!</h2>
 </div>
 
-<p>Hope you like .me's</p>
+<p>Now that we've learned the basic skills needed to get a website out in the real world, let's cover some ways to make it better. A lot better.</p>
 
-<!-- Favicons -->
+<p>In no particular order....</p>
 
-<!-- Responsive -->
+<h3 id="domains"><a href="#domains">Customizing your domain</a></h3>
+<p>This website, and its parent, are hosted through GitHub. But I'm using my own domain name, because it's way cooler that way.</p>
+<p class="with-list">To do this for your website, it's as easy as 1, 2, 3i, 3ii!</p>
+<ol>
+  <li>Go to <a href="https://namecheap.com">Namecheap</a> and buy a domain you like! Remember, the <a href="https://education.github.com/pack/">GitHub student developer pack</a> comes with a free <code class="inline-code">.me</code> domain from Namecheap, in case you don't want to spend any money.</li>
+  <li><p>In your <code class="inline-code">username.github.io</code> repo, at the same level as <code class="inline-code">index.html</code>create a file called <code class="inline-code">CNAME</code>. Inside that file, add just one line&colon; your new domain name, all lowercase, and nothing else. For example, this site's CNAME is just&colon;</p>
+  <pre><code class="language-markup">evan.land</code></pre></li>
+  </li>
+  <li><p class="with-list">In Namecheap, in your dashboard, click &ldquo;Manage&rdquo; on the domain name you just bought. Then click on Advanced DNS from the tabs in the middle of the page. Then, do the following&colon;</p>
+    <ol class="roman">
+      <li>Use the red &ldquo;Add new record&rdquo; button to add two A Records, both with host <code class="inline-code">@</code>, one with the IP address <code class="inline-code">192.30.252.153</code>, the other with IP address <code class="inline-code">192.30.252.154</code>.</li>
+      <li>Use the red &ldquo;Add new record&rdquo; button to add a CNAME Record, with host <code class="inline-code">www</code> and the value <code class="inline-code">[username].github.io.</code>. For example, my CNAME Record's value is <code class="inline-code">evantarrh.github.io.</code>. Don't leave out the dot at the end of it!</li>
+    </ol>
+  </li>
+</ol>
+<p>You'll need to wait at least half an hour for the changes to finish, but after that, everything should work like you want it to.</p>
 
-<!-- GA -->
+<h3 id="responsive"><a href="#responsive">CSS Media Queries</a></h3>
+<p>While you were designing your website, did you ever think about what it would look like on a phone? More and more people browser the internet using their phones, and it's our duty as web developers to make sure our websites' user experience is just as good on a phone or tablet.</p>
 
-<p>Content coming soon!</p>
+<p class="with-list">The best way to do this is in your CSS, with <strong>media queries</strong>! That's how this website looks passable on mobile.</p>
+<ul>
+  <li><a href="http://learnlayout.com/media-queries.html">Here</a>'s a quick introduction.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries">Here</a>'s a great reference guide.</li>
+  <li><a href="https://css-tricks.com/logic-in-media-queries/">Here</a> are some interesting tricks if you want to get your brain working hard.</li>
+</ul>
+
+<h3 id="javascript"><a href="#javascript">Better JavaScript</a></h3>
+<p>Our JavaScript lesson was pretty long, but I still left out a lot of things that are really crucial for working on anything beyond a personal site.</p>
+<ol>
+  <li>I've linked to <a href="http://eloquentjavascript.net">Eloquent JavaScript</a> before, and I'll do it again. It's so important to have good JavaScript fundamentals, and this website does by far the best job. You should already have read chapters 1 and 2&semi; maybe even more important is <a href="http://eloquentjavascript.net/03_functions.html">Chapter 3</a>, functions. Please read that!</li>
+  <li>MDN also has an excellent <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">crash course</a> in all things JavaScript. It's much shorter than EloquentJS, but still covers a lot of the important stuff.</li>
+</ol>
+
+<h3 id="favicons"><a href="#favicons">Favicons</a></h3>
+<p>Ever wonder how there's a little green J next to the <code class="inline-code">title</code> in your browser's tabs? It's called a <strong>favicon</strong>, and all the cool kids will have one on their personal sites.</p>
+
+<p>You can make one with <a href="http://www.favicon.cc/">this silly tool</a>, and store it at the same level as your <code class="inline-code">index.html</code> with the name <code class="inline-code">favicon.ico</code>.
+
+<p>To use a <code class="inline-code">.png</code>, or to get more information about the rabbit hole that is the favicon, check out this <a href="https://github.com/audreyr/favicon-cheat-sheet">incredibly detailed guide</a>. Don't spend too much time there or your brain will explode.</p>
+
+<h3 id="ga"><a href="#ga">Google Analytics</a></h3>
+<p>Why make a personal site if you can't have incredibly detailed information about how many people are visiting your website every day, where they're from, and what browser they're using? <a href="https://google.com/analytics">Google Analytics</a> is such a comically useful tool that every time I use it I'm amazed at how free it is.</p>
+
+<p>The guide on the Google Analytics site should be enough to get you started&semi; <a href="https://support.google.com/analytics/answer/1008015?hl=en">here</a> is an extra-detailed guide in case you get stuck.</p>
+
+<h3 id="git-caching"><a href="#git-caching">Caching your GitHub password</a></h3>
+<p>Are you tired of entering your username and password every time you want to push to GitHub? Follow <a href="https://help.github.com/articles/caching-your-github-password-in-git/">this guide</a> and you'll never have to think about it again.</p>
+
+<div class="separator"></div>
+
+<p>Anything else you want to see here? Let me know&mdash;I want this to be as helpful as possible.</p>
+
+<p>Happy building!</p>
 
 {{/content}}
 
