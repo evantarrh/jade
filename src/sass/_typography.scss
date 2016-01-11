@@ -95,7 +95,7 @@ em {
   font-style: italic;
 }
 
-h2, h4, p, .inline-code, .major-key, strong, em {
+* {
   &::selection {
     background-color: $translucent-jade;
   }

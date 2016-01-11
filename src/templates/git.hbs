@@ -60,13 +60,13 @@
 
 <pre><code class="language-bash">git clone [link-you-copied]</code></pre>
 
-<p>This will copy the <strong>repository</strong> and all its contents onto your computer, and it'll create a new folder inside whatever folder you ran <code class="inline-code">git clone</code> from.</p>
+<p>This will copy the repository and all its contents onto your computer, and it'll create a new folder inside whatever folder you ran <code class="inline-code">git clone</code> from.</p>
 
 <p>You can do this with any project on GitHub, whether or not it belongs to you. People who use GitHub to store their projects are participating in <strong>open source</strong> development, so that everyone can contribute to everyone else's projects. Now you're entering into that world!</p>
 
 <h3 id="commiting"><a href="#commiting">Committing changes to a project</a></h3>
 
-<p>While you should still be saving your work habitually, Git enables you to have certain checkpoints. Whenever you feel that you've completed a task, solved a problem, or you just want to save the work that you've done as a complete unit, you make a Git <strong>commit</strong>.</p>
+<p>While you should still be saving your work habitually, Git enables you to create certain checkpoints. Whenever you feel that you've completed a task, solved a problem, or you just want to save the work that you've done as a complete unit, you make a Git <strong>commit</strong>.</p>
 
 <p>There are a couple of different steps to doing this. First, let's get our repository to a state that's ready to be committed. Right now, if you <code class="inline-code">ls</code> or <code class="inline-code">dir</code> inside the directory you just cloned, there should only be one file&colon; README.md. Let's fix that by adding an <code class="inline-code">index.html</code>! You can either reuse your HTML from our assignments or create something new, but it doesn't matter as long as you save it in your <code class="inline-code">username.github.io</code> folder.</p>
 
@@ -78,27 +78,78 @@
 
 <h4>git add</h4>
 
-<p>Let's run another command&colon; <code class="inline-code">git add index.html</code>. Now, if we run <code class="inline-code">git status</code> again, we'll see that we no longer have any untracked files&semi; instead, we have a section called &ldquo;Changes to be committed&rdquo;, and it tells us that Git is now aware of a new file called <code class="inline-code">index.html</code>. We would say that <code class="inline-code">index.html</code> is now <strong>staged</strong> to be committed.</p>
+<p>Let's run another command&colon; <code class="inline-code">git add index.html</code>. Now, if we run <code class="inline-code">git status</code> again, we'll see that we no longer have any untracked files&semi; instead, we have a section called &ldquo;Changes to be committed&rdquo;, and it tells us that Git is now aware of a new file called <code class="inline-code">index.html</code>. <code class="inline-code">index.html</code> is now <strong>staged</strong> to be committed.</p>
 
 <p>You can stage all of the files in a directory by running <code class="inline-code">git add -A</code>.</p>
 
 <h4>git commit</h4>
 
-<p>So what does it mean for a file to be staged to be committed? It means that if we run <code class="inline-code">git commit</code>, our changes will be included in that commit, which, like I mentioned before, is essentially a checkpoint for our repo. Let's do this now by running <code class="inline-code">git commit -m "Create index.html"</code>. Whenever you make a commit, you include a commit message that explains the changes you've made.</p>
+<p>So what does it mean for a file to be staged to be committed? It means that if we run <code class="inline-code">git commit</code>, our changes will be included in that commit, which, like I mentioned before, is essentially a checkpoint for our repo. Let's do this now by running <code class="inline-code">git commit -m "Create index.html"</code>. Whenever you make a commit, you include a commit message that explains the changes you've made, and it goes inside quotes after <code class="inline-code">-m</code>.</p>
 
 <h4>git log</h4>
 
-<p></p>
+<p>If you run <code class="inline-code">git log</code>, you'll see the entire history of your repository. Now that you've committed something, the log will contain two commits&colon; the initial commit, made on GitHub, and your own commit, &ldquo;Create index.html&rdquo;.</p>
 
-<!--
-git push
+<h4>git push</h4>
 
-...
+<p>So far, all of these commands have only been relevant to our local work. But the magic of Git is that it makes it really easy to share your code with other people and store it in one centralized location. Run <code class="inline-code">git push origin master</code> and watch the magic unfold! It'll print some garbage, like <code class="inline-code">Delta compression using up to 4 threads</code>, but what's important is that it gets your <strong>remote</strong> repository (i.e., GitHub's version) up to the same point as your local repo. The GitHub page for your repo will reflect the changes you've made.</p>
 
-git diff
+<div class="separator"></div>
 
-git branch?
- -->
+<h3 id="workflow"><a href="#workflow">Developing a Git workflow</a></h3>
+<p class="with-list">These commands are all you need to maintain a repo on your own. <span class="major-key">You should develop a consistent workflow with Git</span>, and it should look something like this&colon;</p>
+<ol>
+  <li>Do some good work.</li>
+  <li><code class="inline-code">git add</code>&colon; Most of the time, you'll use <code class="inline-code">git add -A</code>, but you can specify individual files if need be.</li>
+  <li><code class="inline-code">git commit -m "Extra informative commit message"</code></li>
+  <li><code class="inline-code">git push origin master</code></li>
+  <li>Repeat steps 1&ndash;4 until code is perfect</li>
+</ol>
+
+<h4>git diff</h4>
+<p>There's another command that will be helpful to you as you start to work with bigger and bigger files and projects. Running <code class="inline-code">git diff</code> will show the differences between the lines of code in your currently saved files and the code from your most recent commit. If you ever spend more than an hour working on something, you'll probably find yourself wondering what's actually changed and how it's changed before you want to <code class="inline-code">git add</code> anything. This is a great way to ensure that you're only committing exactly the code you want to commit.</p>
+
+<div class="separator"></div>
+
+<p>This lesson is a little shorter, but there's still a lot of technical language to learn!
+<h3 id="terms"><a href="#terms">Terms</a></h3>
+<dl>
+  <dt>Git</dt>
+  <dd>A version control system developed by Linus Torvalds in 2005.</dd>
+  <dt>version control</dt>
+  <dd>Software that makes it easy to organize and control revisions.</dd>
+  <dt>command</dt>
+  <dd>A program you can run from the command line. You should be familiar with <code class="inline-code">pwd</code>, <code class="inline-code">ls</code> (or <code class="inline-code">dir</code>), <code class="inline-code">cd</code>, and <code class="inline-code">subl</code>.</dd>
+  <dt>Repository (repo)</dt>
+  <dd>A folder that contains a project that's tracked by Git.</dd>
+  <dt>GitHub</dt>
+  <dd>A platform that hosts Git projects and facilitates open source collaboration.</dd>
+  <dt>staged</dt>
+  <dd>Describes changes that are ready to be committed. <code class="inline-code">git add</code> stages your changes.</dd>
+  <dt>commit</dt>
+  <dd>A savepoint in Git history.</dd>
+  <dt>remote</dt>
+  <dd>A version of a Git project that is hosted on an outside network. GitHub contains the remote version of your username.github.io repo.</dd>
+  <dt>Git commands to be familiar with&colon;</dt>
+  <dd>
+    <ul>
+      <li><code class="inline-code">git status</code>&colon; current state of the git repo</li>
+      <li><code class="inline-code">git add</code>&colon; stage files for being committed</li>
+      <li><code class="inline-code">git commit</code>&colon; save all staged files into a definitive savepoint</li>
+      <li><code class="inline-code">git log</code>&colon; shows commit history</li>
+      <li><code class="inline-code">git push</code>&colon; pushes local commits to remote</li>
+      <li><code class="inline-code">git diff</code>&colon; shows difference between repo and most recent commit</li>
+    </ul>
+  </dd>
+</dl>
+
+<p>In your browser, go to <code class="inline-code">[username].github.io</code>&colon; surprise! GitHub hosts a free website for all of its users, because they are an amazing company. If you're interested in customizing your domain name, we'll talk about it in the next section.</p>
+
+<p>This marks the end of our curriculum. I hope you've enjoyed it! I spent a really long time trying to make it as good as I could, but I know there are a million things that could be better. If you have any feedback at all, <a href="https://github.com/evantarrh/jade/issues/new">open a GitHub issue</a> or <a href="https://twitter.com/evantarrh">DM me</a> or email me or find me and talk to me in real life.</p>
+
+<p>Thank you so much for reading this far! I really mean it.</p>
+
+<p>If you are still thirsting for more knowledge and more stuff to do, don't worry&colon; I'm on the same page. There's one more page full of extra things to learn about that will make you an even better web developer.</p>
 
 
 {{/content}}
