@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>From Zero to Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <meta name="robots" content="NOODP, index, follow" />
+    <meta itemprop="name" content="From Zero to Website">
+    <meta itemprop="description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta itemprop="image" content="">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="From Zero to Website">
+    <meta name="twitter:description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="">
+    <meta name="twitter:domain" content="evan.land">
+    <!-- Open Graph data (Facebook) -->
+    <meta property="og:title" content="From Zero to Website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://evan.land/jade/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <!-- Chrome Theme Color -->
+    <meta name="theme-color" content="#42CBAD">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/jade/css/style.min.css" inline>
+    <!-- Google Analytics go here -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-50221324-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="big-nav hidden">
+        <div class="pages">
+            <ul>
+                <li><a href="/jade/">Introduction</a></li>
+                <li><a href="/jade/html.html">HTML</a></li>
+                <li><a href="/jade/css.html">CSS</a></li>
+                <li><a href="/jade/js.html">Javascript</a></li>
+                <li><a href="/jade/git.html">Git and GitHub</a></li>
+                <li><a href="/jade/nextsteps.html">Next Steps</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="burger" class="burger">
+            <div class="patty"></div>
+            <div class="patty"></div>
+            <div class="patty"></div>
+        </div>
+        <div class="mobile-only mobile-header">
+            <h1>From Zero to Website</h1>
+        </div>
+        <div class="content">
+            <div class="headers hide-mobile">
+  <h1>CSS</h1>
+  <h2>Because websites deserve better than Times New Roman</h2>
+</div>
+
+<p>Hopefully, you've recently finished building yourself a complete page in HTML. &ldquo;But wait,&rdquo; you say. &ldquo;This isn't what real websites look like. This is what garbage websites look like!&rdquo;</p>
+<p>Even if your HTML looks perfect, it's not enough on its own. Thankfully, we have CSS: a tool to help our websites not look like garbage.</p>
+
+<h3 id="intro"><a href="#intro">What is CSS? What does it look like?</a></h3>
+
+<p><span class="major-key">CSS modifies properties of HTML elements.</span> Here's what it looks like:</p>
+
+<pre><code class="language-css">p {
+    font-size: 20px;
+}</code></pre>
+
+<p>That snippet of CSS will set the font size of all paragraphs on an HTML page to 20 pixels.</p>
+
+<p>More generally, a CSS <strong>rule</strong> is formatted like this:</p>
+
+<pre><code class="language-css">[selector] {
+    [property]: [value];
+    [property]: [value];
+    [any arbitrary number of property/value pairs]
+}</code></pre>
+
+<p>CSS has a strange learning curve, because almost none of the knowledge is conceptual&semi; instead, learning CSS comes down to getting familiar with a lot of different properties one at a time, and trying a lot of different solutions when problems come up. Once again, Google will be your friend!</p>
+
+<div class="separator"></div>
+
+<p>In order to write CSS, we have to get familiar with <strong>selectors</strong>&colon; the strings that determine which elements your CSS rules are applied to.</p>
+
+<p><pre><code class="language-css">[selector] {
+    [property/value pairs]
+}</code></pre>
+
+<h3 id="selectors"><a href="#selectors">Selectors</a></h3>
+
+<p>There are a couple different ways we can specify HTML elements using selectors. Let's dive in!</p>
+
+<h4>Element type</h4>
+
+<p>In the first example on this page, the selector was just one character long: <code class="inline-code">p</code>. That selector means that the CSS rule applies to all <code class="inline-code">&lt;p&gt;</code>'s on the page.</p>
+
+<p>We can do the same thing with any HTML element&colon; <code class="inline-code">a</code>, <code class="inline-code">h1</code>, <code class="inline-code">body</code>, you name it. However, it's important to note that <span class="major-key">many CSS rules will apply not only to the selected elements, but also to their children.</span> For example, check out the following rule:</p>
+<pre><code class="language-css">body {
+    color: red; /* the "color" rule sets text color */
+}</code></pre>
+<p>This will make all of your website's text red, because all of the page's content is nested inside the <code class="inline-code">body</code>.</p>
+
+<h4>Classes</h4>
+
+<p>What if you wanted a CSS rule to only apply to certain paragraphs? That's what <strong>classes</strong> are for! Check out this snippet of HTML and CSS:</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;p&gt;This is a normal paragraph.&lt;/p&gt;
+    &lt;p class="special"&gt;This paragraph is special, mmkay?&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<pre><code class="language-css">p {
+    color: red;
+}
+
+.special {
+    font-size: 36px;
+}</code></pre>
+
+<p>A class is just another attribute of HTML elements. In order to use a class as a CSS selector, all you need to do is add a <code class="inline-code">.</code> to the beginning of the class name in your CSS.</p>
+<p>In the example above, both paragraphs will be red, because the <code class="inline-code">color: red</code> rule applies to every <code class="inline-code">&lt;p&gt;</code> element. But only the second paragraph will have a larger-than-normal font-size.</p>
+<p>You can apply any class to as many HTML elements as you want. Let's look at another example:</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;p&gt;I'm a normal paragraph.&lt;/p&gt;
+    &lt;p class="small"&gt;I am so small.&lt;/p&gt;
+    &lt;p class="small"&gt;I am so small.&lt;/p&gt;
+    &lt;p class="small"&gt;I am so small.&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<pre><code class="language-css">p {
+    color: red;
+}
+
+.small {
+    color: blue;
+    font-size: 8px;
+}</code></pre>
+
+<p>Only the first paragraph will have a normal font-size&semi; the last three will be super small.</p>
+
+<p>But what about their color? The last three paragraphs have two different rules that affect their color&colon; all <code class="inline-code">&lt;p&gt;</code>'s have <code class="inline-code">color: red</code>, but all elements with the <code class="inline-code">small</code> class have <code class="inline-code">color: blue</code>. Will this break something?</p>
+
+<p>Nope&mdash;the last three paragraphs are all blue! CSS is smarter than you might think, and it knows that the <code class="inline-code">.small</code> rule is more specific than the rule that applies to all paragraphs. Therefore, if there are any conflicts for a specific HTML element, CSS follows the most specific rule that applies to it.</p>
+
+<!-- optional paragraph about how a `p` rule would be more specific than `body` here -->
+
+<h4>Combining selectors</h4>
+
+<p>What if you wanted a rule to apply to multiple selectors? CSS makes that easy, too!</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;h1&gt;Pokemon are sick&lt;/h1&gt;
+    &lt;p class="big-red"&gt;Charizard&lt;/p&gt;
+    &lt;p class="big-blue"&gt;Blastoise&lt;/p&gt;
+    &lt;p class="big-green"&gt;Venusaur&lt;/p&gt;
+    &lt;p&gt;Fuck Digimon amirite&lt;/p&gt;
+&lt;/body&gt;</code></pre>
+<pre><code class="language-css">.big-red {
+    color: red;
+}
+
+.big-blue {
+    color: blue;
+}
+
+.big-green {
+    color: green;
+}
+
+h1, .big-red, .big-blue, .big-green {
+    font-size: 72px;
+}</code></pre>
+
+<p>You can use commas to combine selectors &lpar;both HTML element selectors like <code class="inline-code">h1</code> and class selectors like <code class="inline-code">big-red</code>&rpar;. In this example, everything except the last paragraph has a font-size of <code class="inline-code">72px</code>.</p>
+
+<div class="separator"></div>
+
+<p>Now, we're ready to talk about the different kinds of properties you can set using CSS! There is a truly enormous number of them, so let's focus on three different categories: text, colors, and positioning.</p>
+
+<h3 id="type"><a href="#type">How can I customize text with CSS?</a></h3>
+
+<p>Typography can be one of the most fun parts of building a website, if you are a nerd like me. Let's go through some relevant CSS properties to help make your text look excellent!</p>
+
+<h4>font-size</h4>
+<p>Sets the size of the text. There are several valid <strong>units</strong> for properties like this, but let's stick to <code class="inline-code">px</code>, because it's consistent and easy to use.</p>
+
+<p class="font-size-1">font-size: 10px;</p>
+<p class="font-size-2">font-size: 18px;</p>
+<p class="font-size-3">font-size: 32px;</p>
+
+<p>Generally, the most readable size for text is around 18 or 20 <code class="inline-code">px</code>, but it will depend on the font and the context. Note that a little change goes a long way when it comes to pixels!</p>
+
+<h4>line-height</h4>
+<p>This attribute will control the <strong>line-height</strong> of your text. Again, we'll use <code class="inline-code">px</code> as units. To help show this visually, I've changed the <code class="inline-code">background-color</code> of these next paragraphs, which we'll talk about soon!</p>
+
+<p class="line-height-1">line-height: 15px;<br>
+You don't want your line-height to be less than your font-size. Readability should always be your priority.</p>
+<p class="line-height-2">line-height: 20px;<br>If your line-height is the same value as your font-size, it still might look cramped.</p>
+<p class="line-height-3">line-height: 40px;<br>Because double-spacing isn't just for making your essays hit ten pages! This can look awkward, too, though, so be careful.</p>
+
+<p>Some people believe that the ideal line-height is &lpar;font-size &times; 1.618&rpar;, which is the <a href="https://en.wikipedia.org/wiki/Golden_ratio" class="ALMIGHTY-GOLDEN-RATIO">golden ratio</a>. It does work remarkarbly well, and it's how the text has been set for this tutorial all along.</p>
+
+<h4>font-weight</h4>
+
+<p>Font-weight can be a finicky attribute, because it depends on the font you're using. The two most common values are <code class="inline-code">400</code> and <code class="inline-code">700</code> &lpar;no units&rpar;, which translate to "normal" and "bold". The font I'm using, Lato, also has a 900 weight, which I use for my <code class="inline-code">h1</code>'s.</p>
+
+<p class="font-weight-1">font-weight: 400;</p>
+<p class="font-weight-2">font-weight: 700;</p>
+<p class="font-weight-3">font-weight: 900;</p>
+
+<h4>font-style</h4>
+<p>Font-style should be used as nothing more than an on/off switch for italics. Relevant values are <code class="inline-code">italic</code> and <code class="inline-code">normal</code>.</p>
+
+<p class="font-style-1">font-style: italic;</p>
+<p class="font-style-2">font-style: normal (default value);</p>
+
+<h4>font-family</h4>
+<p>Font-family might be the most important attribute, because it lets use choose our actual font! There are several built-in fonts that will work in any browser &lpar;of which Times New Roman is the most infamous&rpar;, but we can do better than that.</p>
+
+<p class="font-family-1">font-family: Times New Roman</p>
+<p class="font-family-2">font-family: Helvetica</p>
+<p class="font-family-3">font-family: Lato</p>
+
+<p>Lato isn't a built-in font, but I can use it thanks to <a href="https://google.com/fonts">Google Fonts</a>. Google Fonts gives you free access to thousands of different fonts, and it's extremely useful. It's easy to use&colon; once you select a font and some weights, all you have to do is insert an HTML snippet&mdash;which they provide for you&mdash;into your website's <code class="inline-code">head</code>! Here's the one I use for this website:</p>
+
+<pre><code class="language-markup">&lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'&gt;</code></pre>
+
+<p>That snippet of HTML is all I need to use Lato at different weights.</p>
+
+<div class="separator"></div>
+
+<p>Now that we have some typesetting skills, let's take a look at colors! Nothing in life is black and white, so your website shouldn't be either.</p>
+
+<h3 id="color"><a href="#color">How do colors work in CSS?</a></h3>
+
+<p>While it's possible to make a paragraph red using <code class="inline-code">color: red</code>, you will quickly find that that won't offer you a whole lot of creativity. CSS allows you to be much more specific than that!</p>
+
+<h4>RGB</h4>
+<p>There are several options for syntax, but a good alternative is <strong>RGB</strong>, where you specify a value between 0 and 255 for red, green, and blue.</p>
+
+<p class="color-1">color: rgb(0, 0, 0);</p>
+<p class="color-2">color: rgb(0, 0, 255);</p>
+<p class="color-3">color: rgb(42, 136, 252);</p>
+
+<p>Remember&colon; <code class="inline-code">rgb(0, 0, 0)</code> is black and <code class="inline-code">rgb(255, 255, 255)</code> is white.</p>
+
+<h4>Hex</h4>
+<p>You should also be familiar with <strong>hexadecimal notation</strong>, or more simply, <strong>hex values</strong> &lpar;or <strong>hex codes</strong>&rpar;. Here's what it looks like:</p>
+
+<p class="color-1">color: #000000;</p>
+<p class="color-2">color: #0000FF;</p>
+<p class="color-3">color: #2A88FC;</p>
+
+<p>Hex codes work the same way as RGB, where red, green, and blue each get a value from 0 to 255. However, hex uses just two characters for each: they're numbers in <a href="https://en.wikipedia.org/wiki/Hexadecimal">base 16</a>. The second example above, <code class="inline-code">#0000FF</code>, translates to <code class="inline-code">rgb(0, 0, 255)</code>. The first two numbers, <code class="inline-code">00</code>, translate to a red value of 0&semi; the second two numbers, <code class="inline-code">00</code>, translate to a green value of 0&semi; and the final two numbers, <code class="inline-code">FF</code>, translate to a blue value of 255.</p>
+
+<p></p>
+
+<h4>In context</h4>
+
+<p class="with-list">Let's look at some examples of using colors in context.</p>
+<ul>
+<li><p>Setting text color</p>
+<p>We've done this before! You can set text color just by using the <code class="inline-code">color</code> attribute.</p>
+<pre><code class="language-css">.white-text {
+    color: rgb(255, 255, 255);
+}</code></pre>
+</li>
+<p>A note about font color: black isn't always the best option on a white background, nor is white always the best option on a dark background. Using a light or dark gray will help soften any harsh contrast. The text you're reading now is actually a dark gray, <code class="inline-code">#222222</code>.
+<li><p>Setting a background color</p>
+<p>Every element has a default background color of white, but it's easy to change. You can change the background of your whole website just by changing the <code class="inline-code">background-color</code> of the body.</p>
+<pre><code class="language-css">body {
+    /* This will make your whole website neon green */
+    /* Not a great idea */
+    background-color: rgb(0, 255, 0);
+}</code></pre>
+</li>
+</ul>
+
+<div class="separator"></div>
+
+<p>We have one more topic of CSS attributes to cover&colon; positioning. Positioning things using CSS can be frustrating, but you'll learn quickly! And by that I mean you'll quickly learn that CSS is completely unusable and broken forever. Welcome to the party.</p>
+
+<h3 id="position"><a href="#position">How do I position elements on a page?</a></h3>
+
+<p>CSS gives us many tools to solve the problem of placing something on a page. Often, there are multiple solutions to the same problem.</p>
+
+<h4>Position</h4>
+<p><strong>Position</strong> is an important CSS attribute to understand. It only has a few possible values, but they are all very powerful. Let's look at the most relevant ones&colon;</p>
+<ol>
+  <li>
+    <p><code class="inline-code">position: fixed</code></p>
+    <p>This is the easiest position to work with. A fixed element stays in the same visual spot on your browser no matter what. Notice how the hamburger menu on the top left stays in the same place no matter where you're scrolling. That element is <code class="inline-code">position: fixed</code>!</p>
+    <p>To use this, you also need to specify one or more of the following attributes: <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, <code class="inline-code">right</code>. Here's an example of a button that will stay in the bottom right of the page:</p>
+    <pre><code class="language-css">.button {
+    position: fixed;
+    /* the bottom of the button will always be
+        20px from the bottom of the window */
+    bottom: 20px;
+    /* the right edge of the button will always be
+        20px from the right side of the window */
+    right: 20px;
+}</code></pre>
+  </li>
+  <li>
+    <p><code class="inline-code">position: absolute</code></p>
+    <p>This works a lot like <code class="inline-code">position: fixed</code>, except that instead of fixing an element to the window, it fixes an element to its parent, as long as the parent is <code class="inline-code">position: relative</code>. Once again, you'll generally need to also specify one or more of <code class="inline-code">top</code>, <code class="inline-code">bottom</code>, <code class="inline-code">left</code>, or <code class="inline-code">right</code>.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">position: relative</code></p>
+    <p>Relatively positioned elements generally behave as you'd expect them to. When you specify any position on a relatively-positioned element &lpar;<code class="inline-code">left</code>, <code class="inline-code">right</code>, etc.&rpar;, everything else is positioned by ignoring the changes to the relatively-positioned element. In other words, <code class="inline-code">position: relative</code> is a good way to change the position of only one element.</p>
+
+  </li>
+</ol>
+
+<p>Position is a difficult attribute to visualize. I'd recommend checking out the <a href="https://css-tricks.com/almanac/properties/p/position/">CSS-Tricks</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">MDN</a> articles on position to get a better picture. In general, <span class="major-key"><a href="https://css-tricks.com">CSS-Tricks</a> and <a href="https://developer.mozilla.org/en-US/">MDN</a> are excellent references for anything CSS-related</span>. I always learn something when I read an article from them.</p>
+
+<h4>Width and Height</h4>
+<p>You can specify both the width and height of HTML elements using these attributes. Use either <code class="inline-code">px</code> or <code class="inline-code">%</code> as units. <span class="major-key">When using <code class="inline-code">%</code>, bear in mind that the percentage is computed as the percentage of the parent element's width or height</span>.
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;p class="text"&gt;I am so tall&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+<pre><code class="language-css">.container {
+    height: 800px;
+}
+
+.text {
+    /* ends up being 800px, because its parent's height is 800px */
+    height: 100%;
+}</code></pre>
+
+<h4>Text-Align</h4>
+<p>This rule aligns text, like Microsoft Word or Google Docs. Possible values include <code class="inline-code">left</code>, <code class="inline-code">center</code>, <code class="inline-code">right</code>, and <code class="inline-code">justify</code>. Don't be a dingus, though&mdash;you should only ever use <code class="inline-code">left</code> and <code class="inline-code">center</code>.</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;div class="text-container"&gt;
+        &lt;p class="text"&gt;The Middle - Jimmy Eat World&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></pre>
+
+<pre><code class="language-css">.text-container {
+    text-align: center;
+}</code></pre>
+
+<p>In the above example, note that we must set the paragraph's parent to <code class="inline-code">text-align: center</code>, not the paragraph itself! <code class="inline-code">Text-align</code> rules apply only to an element's children.</p>
+
+<h4>Padding and Margin</h4>
+<p>There's one more positioning trick we should be familiar with: using <strong>padding</strong> and <strong>margin</strong>. Units should be <code class="inline-code">px</code>.</p>
+
+<p>Padding adds space inside an element, and margin adds space around an element. Here's a helpful visualization:</p>
+
+<div class="image-wrapper"><img src="https://css-tricks.com/wp-content/csstricks-uploads/firebox.png"></div>
+
+<p>That model shows an HTML element with a <code class="inline-code">width</code> of <code class="inline-code">267px</code> and a <code class="inline-code">height</code> of <code class="inline-code">24px</code>. It has <code class="inline-code">6px</code> of <code class="inline-code">padding</code> on every side, no border or margin, and it has <code class="inline-code">top: 156px</code>. You can actually see this box model for any HTML element by right-clicking the element and choosing <code class="inline-code">inspect element</code>!</p>
+
+<p>You can put padding on specific sides of an element by using <code class="inline-code">padding-right</code>, <code class="inline-code">padding-top</code>, <code class="inline-code">padding-left</code>, and <code class="inline-code">padding-bottom</code>&semi; same with margin. If the rule doesn't include a direction, like <code class="inline-code">margin: 5px;</code>, then it will apply <code class="inline-code">5px</code> of margin to every side of the element.</p>
+
+<div class="separator"></div>
+
+<p>Now that we've learned some useful CSS rules, we'll learn how to integrate a CSS file with our HTML!</p>
+
+<h3 id="linking"><a href="#linking">How do I put CSS in my HTML file?</a></h3>
+
+<p>Just like HTML, you can write all of your CSS in one file, as long as you end the filename in <code class="inline-code">.css</code>. You can put the file in the same directory as your HTML files, or create a folder called &ldquo;css&rdquo; and put the file there. Then, in your HTML file, link to the CSS file in the <code class="inline-code">head</code>, using the following syntax:</p>
+
+<pre><code class="language-markup">&lt;head&gt;
+    &lt;title&gt;How Website&lt;/title&gt;
+    &lt;!-- The href for the CSS will be different depending on
+        whether you put the CSS file in a new directory, which is
+        what I've done here. --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+<p>A consequence of this is that you can have one CSS file for multiple HTML files. Once again, that's how this website works! Here's another look at the directory structure, including the CSS:</p>
+<pre><code class="language-markup">
+jade/
+  - css/
+    - style.css
+  - index.html
+  - html.html
+  - css.html
+  - js.html
+  - git.html
+  - nextsteps.html</code></pre>
+
+<p>Each HTML file links to the same CSS file.</p>
+
+<p>An important note is that I also use a font from Google Fonts. <span class="major-key">To use Google Fonts, you must import the font before importing the CSS file</span>, like so:</p>
+<pre><code class="language-markup">&lt;head&gt;
+    &lt;title&gt;Kylo Ren's Personal Blog&lt;/title&gt;
+    &lt;link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'&gt;
+    &lt;link rel="stylesheet" type="text/css" href="/css/style.css"&gt;
+&lt;/head&gt;</code></pre>
+
+<div class="separator"></div>
+
+<p>Wow, we covered a lot of content! Now let's learn some words.</p>
+
+<h3 id="terms"><a href="#terms">CSS terms</a></h3>
+<dl>
+  <dt>CSS</dt>
+  <dd>Short for Cascading Style Sheets. Nobody knows that, though, so don't bother remembering it.</dd>
+  <dt>rule</dt>
+  <dd>A complete snippet of CSS&colon; a selector and a property-value pair.</dd>
+  <dt>selector</dt>
+  <dd>A string that specifies HTML elements.</dd>
+  <dt>class</dt>
+  <dd>A special HTML attribute that makes it easy to select a group of elements with CSS.</dd>
+  <dt>unit</dt>
+  <dd>Most CSS values require units, like <code class="inline-code">px</code> or <code class="inline-code">%</code>.</dd>
+  <dt>line-height</dt>
+  <dd>The vertical space taken up by each line of text in an HTML element.</dd>
+  <dt>RGB</dt>
+  <dd>A format for describing colors&colon; <code class="inline-code">rgb(0, 0, 0)</code>. Each value can range from 0 to 255.</dd>
+  <dt>Hex values/hex codes</dt>
+  <dd>A more compact color format&colon; <code class="inline-code">#00FF00</code>. Works the same way as RGB&colon; the first two characters correspond to red, the next two correspond to blue, the last two correspond to green. Each pair of characters can range from <code class="inline-code">00</code> to <code class="inline-code">FF</code>.</dd>
+  <dt>Position</dt>
+  <dd>A property that determines how an element's position is calculated. You should be familiar with the values <code class="inline-code">fixed</code>, <code class="inline-code">relative</code>, and <code class="inline-code">absolute</code>.</dd>
+  <dt>Padding</dt>
+  <dd>Spacing between an element's content and its border.</dd>
+  <dt>Margin</dt>
+  <dd>Space outside of an element's border.</dd>
+</dl>
+
+<div class="separator"></div>
+
+<p>OK, let's goof around a little bit! I always find that when designing websites, and when using CSS in general, I get the best results when I try a lot of different things. So that's what we'll do now!</p>
+
+<h3 id="do-this"><a href="#do-this">Explore the wonderful world of CSS</a></h3>
+
+<p>For this mini-project, we'll be reusing the HTML page we created at the end of the last lesson.</p>
+
+<h4>Getting started</h4>
+<p>Create a new folder called &ldquo;css&rdquo; inside the same folder that contains your HTML file, then create a new file inside &ldquo;css&rdquo;. You can call it <code class="inline-code">style.css</code> if you're boring like me.</p>
+
+<p>In your HTML file, link to the new CSS file in the <code class="inline-code">head</code>, using the <a href="#linking">snippet from above</a>. Add a simple rule to your CSS, like making all the text enormous, then save everything and refresh. If you can't see the change visually, be extra careful about your directory structure and make sure the file name is spelled right in the HTML &lpar;case-sensitive!&rpar;.</p>
+
+<p>Once everything is linked properly, let's get started!</p>
+
+<h4>Tasks</h4>
+<p>These are all open-ended, so exploration is encouraged! If you get bored with something, move onto the next thing. The only goal here is to try enough things that you end up with something good and unexpected.</p>
+
+<ol>
+  <li>Use <a href="https://google.com/fonts">Google Fonts</a> to try out a couple of different font options for your website.</li>
+  <ul>
+    <li>For each font, try a couple of different sizes and weights. Also, try different combinations of header font-size and text font-size.</li>
+  </ul>
+  <li>Once you have a couple of different options for fonts, try at least four different color schemes, including background colors. Here are some suggestions&colon;</li>
+  <ol class="roman">
+    <li>Use 4 different colors on your site</li>
+    <li>Use only 2. This is actually really hard!</li>
+    <li>Try a dark theme</li>
+    <li>Try using the color scheme of your favorite-designed website. <a href="https://buzzfeed.com">BuzzFeed</a> and <a href="https://lyft.com">Lyft</a> are two great places to start.</li>
+  </ol>
+  <li>Try out at least 3 different layouts. You can follow these suggestions, or get creative!</li>
+  <ol class="roman">
+    <li>Try putting your links at the bottom of the page.</li>
+    <li>Try putting everything in the middle of the page.</li>
+    <li>Try filling the page with your image, using <a href="https://css-tricks.com/perfect-full-page-background-image/">this guide</a>.</li>
+  </ol>
+</ol>
+
+<p>Once you've finished trying everything, see if you can decide on two or three different themes for your site. Then, create a separate CSS file for each theme&colon; that way, switching between themes on your HTML page will be as easy as changing the <code class="inline-code">link</code> snippet in the HTML!</p>
+
+
+
+        </div>
+        <div class="inline-nav">
+            <div class="next-subject"><a href="/jade/js.html">Programming for the web with Javascript</a></div>
+<div class="arrow">
+  <a href="/jade/js.html">
+    <div class="line"></div>
+    <div class="line"></div>
+  </a>
+</div>
+
+        </div>
+        <div class="footer">
+            <span class="left">Designed, developed, and maintained by <a href="http://evantarrh.com">Evan</a>.</span>
+            <span class="right"><a href="https://github.com/evantarrh/jade/issues/new">Suggest an improvement.</a></span>
+        </div>
+    </div>
+    <script src="/jade/js/burger.js"></script>
+    <script src="/jade/js/progress.js"></script>
+    <script src="/jade/js/lib/prism.js"></script>
+</body>
+</html>

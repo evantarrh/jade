@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>From Zero to Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <meta name="robots" content="NOODP, index, follow" />
+    <meta itemprop="name" content="From Zero to Website">
+    <meta itemprop="description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta itemprop="image" content="">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="From Zero to Website">
+    <meta name="twitter:description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="">
+    <meta name="twitter:domain" content="evan.land">
+    <!-- Open Graph data (Facebook) -->
+    <meta property="og:title" content="From Zero to Website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://evan.land/jade/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <!-- Chrome Theme Color -->
+    <meta name="theme-color" content="#42CBAD">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/jade/css/style.min.css" inline>
+    <!-- Google Analytics go here -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-50221324-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="big-nav hidden">
+        <div class="pages">
+            <ul>
+                <li><a href="/jade/">Introduction</a></li>
+                <li><a href="/jade/html.html">HTML</a></li>
+                <li><a href="/jade/css.html">CSS</a></li>
+                <li><a href="/jade/js.html">Javascript</a></li>
+                <li><a href="/jade/git.html">Git and GitHub</a></li>
+                <li><a href="/jade/nextsteps.html">Next Steps</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="burger" class="burger">
+            <div class="patty"></div>
+            <div class="patty"></div>
+            <div class="patty"></div>
+        </div>
+        <div class="mobile-only mobile-header">
+            <h1>From Zero to Website</h1>
+        </div>
+        <div class="content">
+            <div class="headers hide-mobile">
+  <h1>JavaScript</h1>
+  <h2>Your website just got more fun</h2>
+</div>
+
+<p>Believe it or not, we already have most of the tools we need to make a fully-functioning website. However, HTML and CSS impose some frustrating restrictions on web development that get completely blown away when you have some familiarity with JavaScript.</p>
+
+<p>It would be impossible to offer a complete course in JavaScript on one page of an introductory web development course, so let's take a little bit of a different approach to this. Instead of learning JavaScript concepts from the ground up, we'll learn how to do some cool things with an easy-to-use JavaScript <strong>library</strong> called <strong>jQuery</strong>.</p>
+
+<!-- <p>Note that this is inadequate preparation for making anything more complex than personal sites! If you want to learn JavaScript properly, I cannot recommend <a href="http://eloquentjavascript.net/">Eloquent JavaScript</a> highly enough. You don't need any programming background to start reading it, and you'll be surprised how quickly you'll get into some really advanced concepts.</p> -->
+
+<p>We'll cover a lot of ground in a short amount of time, and we'll come out on the other side of this lesson with some really, really cool tricks up our sleeves. Onwards and upwards!</p>
+
+<div class="separator"></div>
+
+<!-- <p>While HTML and CSS can make a website look great, they have their shortcomings. With just HTML and CSS, it's impossible to change what's on the page once it loads. JavaScript allows us to do just that&mdash;it lets us manipulate HTML elements and their properties while someone's viewing the page.</p> -->
+
+<h3 id="console"><a href="#console">JavaScript in the Console</a></h3>
+
+<p>Let's start by opening up the <strong>console</strong>! To do this, inspect element anywhere on this page, then choose "console" from the tabs at the top of the inspector. Inside the console, type <code class="inline-code">console.log("Hello website!");</code>, and press enter.</p>
+
+<p>The console is like a little JavaScript sandbox. When you write JavaScript statements in the console, it gets interpreted just like any JavaScript that might have already been included on the website. That means <span class="major-key">the console is a great place to experiment with JavaScript</span>! Bear in mind that anything you do in the console only affects your current session in your browser. So, if you mess anything up super bad, you can always just refresh.</p>
+
+<p>You can open up the console on any website you visit! Because any JavaScript errors also get reported to the console, there might already be a lot of garbage inside the console, depending on the site. No matter what, though, you'll always be able to type things into the console and play around with the HTML on the website.</p>
+
+<p>You can also use <code class="inline-code">console.log</code> statements in JavaScript files. It'll print whatever you put inside the parentheses to the console.</p>
+
+<p>One last thing&colon; you should run all of the JS snippets from this lesson in your console. If you want to live life to the fullest, try modifying each of the snippets a little bit after running them to make sure you understand what's happening and see what works.</p>
+
+<h3 id="var"><a href="#var">JavaScript Variables</a></h3>
+
+<p>In JavaScript, we need to be familiar with the concept of a <strong>variable</strong>. Variables provide a way for us to store values.</p>
+
+<pre><code class="language-javascript">var myFavoriteRapper = "Drake";
+console.log("My favorite rapper is " &plus; myFavoriteRapper);</code></pre>
+
+<p class="with-list">This is a short snippet of JavaScript, but there's a lot to talk about! Let's start by breaking the first line into five separate components.</p>
+<ol>
+  <li>The <strong>keyword</strong> <code class="inline-code">var</code> indicates that we're <strong>declaring</strong> a variable.</li>
+  <li>The name <code class="inline-code">myFavoriteRapper</code> is how we'll refer to this variable in the code after this line in our JavaScript file.</li>
+  <li>The <code class="inline-code">=</code> sign is the assignment operator in JavaScript. It stores whatever value is on the right side of the operator into the variable  on the left side.</li>
+  <li><code class="inline-code">"Drake"</code> is the value being stored into the variable.</li>
+  <li>The semicolon, <code class="inline-code">;</code>, indicates that the <strong>statement</strong> is finished. Every JavaScript statement must end in a semicolon. For now, we can think of a statement as being equivalent to a line of code.</li>
+</ol>
+<p>The second line of code in that snippet should look familiar. We're just logging something to the console, but notice what's inside the parentheses&colon; <code class="inline-code">"My favorite rapper is " &plus; myFavoriteRapper</code>. This expression gets <strong>evaluated</strong> to the string "My favorite rapper is Drake", because you can add strings together with a &plus; sign in JavaScript. <code class="inline-code">myFavoriteRapper</code> contains the string <code class="inline-code">"Drake"</code>, so JavaScript puts the two strings together&semi; it doesn't care that one of the strings is stored in a variable.</p>
+
+<p>Now let's look at an extended version of this snippet.</p>
+
+<pre><code class="language-javascript">var myFavoriteRapper = "Drake";
+console.log("My favorite rapper is " &plus; myFavoriteRapper);
+myFavoriteRapper = "Kendrick";
+console.log("Just kidding. It's " &plus; myFavoriteRapper &plus; ".");</code></pre>
+
+<p>Now that we've already declared the <code class="inline-code">myFavoriteRapper</code> variable, we don't use the <code class="inline-code">var</code> keyword anymore when we want to change the variable's value. Now, when we use the variable in the last line, JavaScript evaluates it to the value to which it was most recently set: <code class="inline-code">"Kendrick"</code>.</p>
+
+<p>If you ran that snippet in the console, or put it in a JavaScript file, you would get the following output:</p>
+
+<pre><code class="language-javascript">My favorite rapper is Drake
+Just kidding. It's Kendrick.</code></pre>
+
+<h3 id="arrays"><a href="#arrays">Grouping values with arrays</a></h3>
+<p>Before we take a look at all the tricks we can do with jQuery, we need to cover one more JavaScript fundamental: the <strong>array</strong>. Arrays are useful for storing groups of values, where it would be unwieldy to have a variable for every single one.</p>
+
+<pre><code class="language-javascript">var numbers = [4, 8, 15, 16, 23, 42];
+console.log(numbers[1]);</code></pre>
+
+<p>In this example, <code class="inline-code">numbers</code> is a variable that stores an array that contains six values. We can access these values with the syntax <code class="inline-code">arrayName[index]</code>. So, the expression <code class="inline-code">numbers[1]</code> will evaluate to the whatever's stored at position 1 in in <code class="inline-code">numbers</code>.</p>
+
+<p>However, the thing that's stored at position 1 in <code class="inline-code">numbers</code> is actually <code class="inline-code">8</code>! That's because arrays are <strong>zero-indexed</strong> in JavaScript, meaning that the indices start at 0. So, to get the first element in <code class="inline-code">numbers</code>, we would need to write <code class="inline-code">numbers[0]</code>.</p>
+
+<!-- length? random element? -->
+
+<div class="separator"></div>
+
+<p>Let's take a break for a second! We're going through these concepts really quickly. I'd recommend going back and rereading the JavaScript we've covered up until now, making sure you understand everything that's going on in the snippets.</p>
+
+<p>If you don't understand everything completely, please read Chapters <a href="http://eloquentjavascript.net/01_values.html">1</a> and <a href="http://eloquentjavascript.net/02_program_structure.html">2</a> of Eloquent JavaScript. It offers a much more complete background to what we're doing now.</p>
+
+<p>If you do understand all the snippets, read Chapters 1 and 2 of Eloquent JS anyway! Read more if you have the time. Trust me when I say that it will serve you well in the long run.</p>
+
+<p>Also, it's OK if this stuff feels hard. JavaScript is such a vast and deep topic that it's impossible to get the hang of it quickly. Remember&colon; if you meet anyone who says they're a JavaScript expert, they are either very very experienced or wrong.</p>
+
+<p>Once you feel like you're up to speed, we'll learn how to make it work with HTML!</p>
+
+<div class="separator"></div>
+
+<h3 id="linking"><a href="#linking">Putting JavaScript on your website</a></h3>
+<p>Inserting JavaScript into a website is pretty similar to linking to a CSS file. Use a <code class="inline-code">script</code> element to include your file right at the bottom of your <code class="inline-code">body</code>&colon;</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- All your head attributes --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Content goes here --&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script src="/js/index.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p>Note that, based on the <code class="inline-code">src</code> attribute of the <code class="inline-code">script</code>, <code class="inline-code">index.js</code> is inside a folder. This follows the same pattern we established in the CSS lesson&colon; create a folder called <code class="inline-code">js</code> and put it at the same level as your <code class="inline-code">index.html</code>, so that any JavaScript files will live inside that new folder. Your files should now look like this&colon;</p>
+
+<pre><code class="language-markup">website/
+  - css/
+    - style.css
+  - js/
+    - index.js
+  - index.html</code></pre>
+
+<h3 id="jquery"><a href="#jquery">jQuery is your friend</a></h3>
+
+<p>jQuery makes JavaScript easier to use. With jQuery, selecting all the paragraphs on a page is as easy as <code class="inline-code">$('p')</code>, where the pure-JS analog would look like <code class="inline-code">document.getAllElementsByTagName('p')</code>. Anytime you see or use a <code class="inline-code">$</code> in JavaScript, that means you're using some features from jQuery.</p>
+
+<p>Before we go any further, let's draw some hard lines about what jQuery is and how to use it.</p>
+
+<h4>What jQuery Actually Is</h4>
+<p>In the introduction, I said that jQuery was a JavaScript library, but I didn't explain any further. What that means is that it's a collection of pre-written JavaScript utilities that abstract away a lot of the headaches caused by doing things in JS that feel like they should be easy, but end up being complex and annoying. jQuery isn't another programming language, even though it can feel like one sometimes&colon; that means that you can use jQuery in normal JavaScript files, as long as you import the jQuery library on your website.
+
+<h4>Importing jQuery</h4>
+
+<p>There are a couple of ways to put jQuery on your website, but the one I'd recommend is by letting Google host it. This is actually the same way Google Fonts works&colon; you just link to the content from Google before you link to your own code. Again, the snippet goes at the bottom of the <code class="inline-code">body</code>&colon;</p>
+
+<pre><code class="language-markup">&lt;body&gt;
+    &lt;!-- Content goes here --&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="/js/index.js"&gt;&lt;/script&gt;
+&lt;/body&gt;</code></pre>
+
+<p>OK! We're ready to do some wild things using jQuery and JavaScript.</p>
+
+<div class="separator"></div>
+
+<h3 id="selectors"><a href="#selectors">Using jQuery selectors</a></h3>
+
+<p>As I mentioned before, selecting all the paragraphs on the page is as easy as <code class="inline-code">$('p')</code> when you use jQuery. Selecting things in jQuery works a lot like CSS&colon; you can select based on class names or tag names, and you can combine selectors with commas.</p>
+
+<pre><code class="language-javascript">$('a')
+$('.major-key')
+$('h1, h2, h3, h4')
+</code></pre>
+
+<!-- this is not 100% true but it's the easiest way to think about it.... -->
+<p>Each of these selections returns an array of HTML elements&mdash;just like arrays can contain numbers or strings, they can also contain more complex objects like HTML elements. For example, <code class="inline-code">$('a')[0]</code> would give you the first link on the page. Try this in the console now!</p>
+
+<p>This means that jQuery makes it really easy for us to manipulate a lot of HTML elements all at once. For example, we can change the content of HTML elements really easily. Try running the following line of code in your console:</p>
+
+<pre><code class="language-javascript">$('.inline-code').html('lol');</code></pre>
+
+<p>&lpar;Unfortunately, there is no concept of an &ldquo;undo&rdquo; button in the console. Remember how I said you'll sometimes have to refresh to get things back to their original state?&rpar;</p>
+
+<p>There are other, less destructive things you can do with HTML in jQuery. Let's take a quick look now&colon;</p>
+
+<pre><code class="language-javascript">// Returns content of first HTML element that matches the selector
+$('.inline-code').html()&semi;
+
+// Inserts HTML snippet at end of element (inside the element)
+$('h3').append(' &lt;a href="https://www.youtube.com/watch?v=iZJXvjeWlVA"&gt;:O&lt;/a&gt;')&semi;
+
+// Inserts HTML snippet after element
+$('h3').after('&lt;p&gt;Time to learn!&lt;/p&gt;')&semi;</code></pre>
+
+<p>The opportunities are endless! The world is your oyster!</p>
+
+<h3 id="events"><a href="#events"><span class="major-key">Handling events with jQuery is a major key</span></a></h3>
+<p>What we've seen so far makes it easy to do some silly things. But what if we could manipulate HTML elements depending on what the user does? Suddenly, we'd have a lot more power. That's what <strong>events</strong> are for! Let's take a look at an example.</p>
+
+<pre><code class="language-javascript">$('.inline-code').on('click', function() {
+  $(this).html('wow lol');
+});</code></pre>
+
+<p>This is a snippet that changes the content of every <code class="inline-code">.inline-code</code> element when you click on it. Copy and paste it into the console to see what the effect is! Let's go through it carefully to understand what's really going on.</p>
+
+
+<pre><code class="language-javascript">// For everything that matches this selector,   when you click it,   do this thing:
+$('.inline-code')&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;.on('click',&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot; function() {
+
+// Change only the clicked element's HTML content to   "wow lol".
+  $(this).html&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot;&middot; ('wow lol');
+
+}); // (closing parens and braces as necessary)</code></pre>
+
+<p class="with-list">Along with <code class="inline-code">click</code> events, there are some other events that are useful to know when building things with jQuery&colon;</p>
+<ul>
+  <li><code class="inline-code">dblclick</code>: double-click on an element</li>
+  <li><code class="inline-code">mouseover</code>: user's mouse moves on top of an element</li>
+  <li><code class="inline-code">mouseout</code>: user's mouse leaves an element</li>
+  <li><code class="inline-code">mousemove</code>: user moves their mouse</li>
+  <li><code class="inline-code">keydown</code>: user presses a key on their keyboard &lpar;to trigger actions based on which key they pressed, check out <a href="http://eloquentjavascript.net/14_event.html#c_HHTiM1P8JU">these</a> <a href="http://unixpapa.com/js/testkey.html">references</a>!&rpar;</li>
+  <li><code class="inline-code">scroll</code>: user scrolls &lpar;if you're viewing this on Chrome on a desktop, there's a special effect on the page that uses this!&rpar;</li>
+</ul>
+
+
+<h3 id="styles"><a href="#styles">Manipulating CSS with jQuery</a></h3>
+
+<p>One of the most useful things you can do with jQuery is changing CSS based on certain events. Just like we can manipulate HTML content with <code class="inline-code">html</code>, we can change all kinds of CSS using <code class="inline-code">css</code>.</p>
+<pre><code class="language-javascript">$('p').on('click', function() {
+  $(this).css({
+    "color": "#42cbad",
+    "font-weight": "700",
+    "line-height": "40px",
+    // "attribute": "value",
+  });
+});</code></pre>
+<p>Note that each property-value pair is in quotes, and goes inside curly braces &lpar;<code class="inline-code">{}</code>&rpar;. Also, each pair has a comma after it, though the comma on the last pair is optional.</p>
+<p>One big disadvantage of this approach is that you can't bring any clicked element back to its original state. What if we wanted to just switch between styles on every click? There are some ways to do that with just JavaScript, but the most elegant solution involves CSS, too!</p>
+<pre><code class="language-css">/* I included this in my CSS so that you could run the snippet below! */
+.extra-cool-text {
+  color: #42cbad;
+  font-weight: 700;
+  line-height: 40px;
+}</code></pre>
+<pre><code class="language-javascript">$('p').on('click', function() {
+  $(this).toggleClass('extra-cool-text');
+});</code></pre>
+<p>Now, instead of manipulating CSS attributes directly with JavaScript, we're just changing whether each element has a class applied to it. <code class="inline-code">toggleClass</code> is extremely useful.</p>
+
+<h3 id="animation"><a href="#animation">Animating things with jQuery</a></h3>
+<p>One of the most fun, and equally useless, things you can do with jQuery is animation! jQuery makes this incredibly easy. The code looks a lot like changing CSS, but you must also provide the number of milliseconds you want the animation to take.</p>
+
+<pre><code class="language-javascript">$('h3').on('mouseover', function() {
+  $(this).animate({
+    "letter-spacing": "10px",
+    "font-size": "40px"
+  }, 1000);
+});</code></pre>
+
+<p>Tears of joy. You can also chain animations together to specify an order, like this&colon;</p>
+<pre><code class="language-javascript">$('h3').on('mouseover', function() {
+  $(this).animate({ "font-size" : "40px" }, 400)
+  .animate({ "letter-spacing" : "10px" }, 1000);
+});</code></pre>
+
+<p>Note that I'm formatting the code a little differently in this snippet&colon; I'm fitting more stuff on one line. That's because JavaScript doesn't care about whitespace or whether or not you have newlines (i.e. press return) between different statements. When you chain animations together, you might find it easier to read visually when you put each animation on its own line.</p>
+
+<p>You can also give the animation something called a <strong>callback</strong> function&colon; some code that will run after the animation finishes. This is optional, and comes after the animation length, separated by a comma, like this&colon;</p>
+<pre><code class="language-javascript">// Run this in the console, then click me
+$('.language-javascript').on('click', function() {
+  $(this).animate({
+    "height" : "0px",
+    "padding": "0px"
+  }, 400, function() {
+    alert("goodbye world"); // like console.log() but better
+  })
+});</code></pre>
+
+<p>You can put anything that's valid JavaScript inside of that callback function.</p>
+
+<h3 class="onload"><a href="#onload">One last thing about jQuery</a></h3>
+<p>Before I send you off into the real world of jQuery silliness, I have one last piece of advice, and it's important.</p>
+
+<p>You can't safely manipulate any HTML until all of the content has actually been loaded. You'll experience some strange and frustrating bugs if you try to do so. But how do we know when the page is safe for JavaScript? It seems like a difficult problem.</p>
+
+<pre><code class="language-javascript">$(document).ready(function() {
+  ...
+  // All JS code goes here!
+  ...
+});</code></pre>
+
+<p>Well, it is indeed a difficult problem, but it's not one you have to solve! This is another great feature of jQuery. As long as you put all of your code inside those beginning and ending lines, you'll never experience the pain of those problems.</p>
+
+<div class="separator"></div>
+
+<p>Cool! We've put together a pretty hilarious toolbox of effects with jQuery. Let's review some language from this lesson, then dive into a mini-project.</p>
+
+<h3 id="terms"><a href="#terms">Terms</a></h3>
+
+<dl>
+  <dt>JavaScript</dt>
+  <dd>A programming language for the web, created in May 1995 in 10 days by Brendan Eich.</dd>
+  <dt>JavaScript library</dt>
+  <dd>A collection of prewritten utilities in JavaScript.</dd>
+  <dt>jQuery</dt>
+  <dd>An all-purpose JavaScript library.</dd>
+  <dt>console</dt>
+  <dd>The browser's interface between you and JavaScript.</dd>
+  <dt>keyword</dt>
+  <dd>A reserved word in JavaScript (or any other programming language!). Examples of keywords would include <code class="inline-code">var</code> or <code class="inline-code">function</code>.</dd>
+  <dt>variable</dt>
+  <dd>A container that stores a value. Every variable has a name, assigned by the programmer.</dd>
+  <dt>declaring a variable</dt>
+  <dd>Creating a variable for the first time. Requires the <code class="inline-code">var</code> keyword.</dd>
+  <dt>statement</dt>
+  <dd>A complete JavaScript operation, analogous to a sentence.</dd>
+  <dt>evaluate</dt>
+  <dd>The process by which JavaScript determines an expression's value.</dd>
+  <dt>array</dt>
+  <dd>A structure that contains 0 or more values.</dd>
+  <dt>zero-indexed</dt>
+  <dd>Describes the convention that states that the first element in an array has an index of 0.</dd>
+  <dt>event</dt>
+  <dd>Any of several different user actions performed in the browser, e.g. <code class="inline-code">click</code>, <code class="inline-code">mouseover</code>, <code class="inline-code">mousemove</code>.</dd>
+  <dt>callback</dt>
+  <dd>A function that gets executed once the current function has finished.</dd>
+</dl>
+
+<h3 id="do-it-just-do-it"><a href="#do-it-just-do-it">Very Serious Assignment</a></h3>
+<h4>Getting started</h4>
+<p>To get started, make sure your directory structure looks like what we covered <a href="#linking">above</a>, and make sure your HTML file links to both jQuery and to your own JavaScript file.</p>
+
+<h4>Your mission</h4>
+<p>Let's do some fun stuff with jQuery! Like all our assignments have been, this one will be pretty open-ended&colon; all I ask is that you spend at least 45 minutes goofing around with the effects we talked about. If you want some inspiration, here are some ideas!</p>
+<ul>
+  <li>Make some links titled "Facebook", "Twitter", "LinkedIn"&mdash;normal social media outlets or whatever. When the user clicks on the link, though, instead of taking them to Facebook or Twitter or whatever garbage company, just change the link's HTML content to be a description of what the product does.</li>
+  <li>Design your website so that when everything loads at first, all the user sees is white. But over the course of one minute, your content gradually fades in, ever so slowly.</li>
+  <li>Make a "dark theme" button that toggles your website between light and dark themes. See how I used that word "toggle"?</li>
+  <li>Make a "sith mode" button that toggles your website between light and dark themes, where the dark theme also replaces all your images with pictures of Kylo Ren looking sad. (This one is a little harder, but I put it here anyway because I really want to see it in real life.)</li>
+</ul>
+
+
+<script type="text/javascript">console.log("Hi! This is what happens when you console.log from inside a file.");</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+
+        </div>
+        <div class="inline-nav">
+            <div class="next-subject"><a href="/jade/git.html">Version control with Git and GitHub</a></div>
+<div class="arrow">
+  <a href="/jade/git.html">
+    <div class="line"></div>
+    <div class="line"></div>
+  </a>
+</div>
+
+        </div>
+        <div class="footer">
+            <span class="left">Designed, developed, and maintained by <a href="http://evantarrh.com">Evan</a>.</span>
+            <span class="right"><a href="https://github.com/evantarrh/jade/issues/new">Suggest an improvement.</a></span>
+        </div>
+    </div>
+    <script src="/jade/js/burger.js"></script>
+    <script src="/jade/js/progress.js"></script>
+    <script src="/jade/js/lib/prism.js"></script>
+</body>
+</html>

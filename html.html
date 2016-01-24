@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>From Zero to Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <meta name="robots" content="NOODP, index, follow" />
+    <meta itemprop="name" content="From Zero to Website">
+    <meta itemprop="description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta itemprop="image" content="">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="From Zero to Website">
+    <meta name="twitter:description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="">
+    <meta name="twitter:domain" content="evan.land">
+    <!-- Open Graph data (Facebook) -->
+    <meta property="og:title" content="From Zero to Website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://evan.land/jade/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <!-- Chrome Theme Color -->
+    <meta name="theme-color" content="#42CBAD">
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/jade/css/style.min.css" inline>
+    <!-- Google Analytics go here -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-50221324-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="big-nav hidden">
+        <div class="pages">
+            <ul>
+                <li><a href="/jade/">Introduction</a></li>
+                <li><a href="/jade/html.html">HTML</a></li>
+                <li><a href="/jade/css.html">CSS</a></li>
+                <li><a href="/jade/js.html">Javascript</a></li>
+                <li><a href="/jade/git.html">Git and GitHub</a></li>
+                <li><a href="/jade/nextsteps.html">Next Steps</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="burger" class="burger">
+            <div class="patty"></div>
+            <div class="patty"></div>
+            <div class="patty"></div>
+        </div>
+        <div class="mobile-only mobile-header">
+            <h1>From Zero to Website</h1>
+        </div>
+        <div class="content">
+            
+<div class="headers hide-mobile">
+  <h1>HTML</h1>
+  <h2>What your browser speaks</h2>
+</div>
+
+<p>HTML is the language of the Internet. Whenever you visit a website, what you see is the result of HTML being interpreted and rendered by your browser.</p>
+
+<h3 id="tags"><a href="#tags">What does HTML look like?</a></h3>
+<p>It's simple!</p>
+
+<pre><code class="language-markup">&lt;p&gt;It's simple!&lt;/p&gt;</code></pre>
+
+<p>HTML is simply the content you see on the screen, with extra markup around it to help format it. In the example above, the <code class="inline-code">&lt;p&gt;</code> is an <strong>opening tag</strong> that denotes the start of a paragraph, and the <code class="inline-code">&lt;/p&gt;</code> closes the paragraph. The whole paragraph can be referred to as an <strong>element</strong>.</p>
+
+<p>HTML is more than just paragraphs, though. Let's get familiar with some more HTML elements!</p>
+
+<h4>Headers</h4>
+<p>One of the best ways to create hierarchy is with <strong>headers</strong>. At the top of this page, the "HTML" is actually an <code class="inline-code">h1</code>, so the code looks like <code class="inline-code">&lt;h1&gt;HTML&lt;/h1&gt;</code>.
+
+<p><code class="inline-code">h1</code>'s are the biggest options for headers, but there are also <code class="inline-code">h2</code>'s and <code class="inline-code">h3</code>'s, all the way down to the rarely-used <code class="inline-code">h6</code>. For example, the gray "Headers" at the top of this section is an <code class="inline-code">h4</code>.</p>
+
+
+<h4>Links</h4>
+<p>We can use <strong>anchor tags</strong> to link to other pages!</p>
+<pre><code class="language-markup">&lt;a href="http://jumpman.space"&gt;Jumpman Jumpman Jumpman&lt;/a&gt;</code></pre>
+<p>The <code class="inline-code">href</code> attribute contains the URL that the link will send you to, and the content inside the tags is what the user actually sees. So, the code above ends up producing this: <a href="http://jumpman.space">Jumpman Jumpman Jumpman</a></p>
+<p>If you're linking to another website, it's important to always include the <code class="inline-code">http://</code> at the beginning of the link inside the <code class="inline-code">href</code>.</p>
+<p>However, <span class="major-key">when you link to a different page on the same website, you should always omit both the <code class="inline-code">http://</code> and the base URL</span>&mdash;so, for example, if I wanted to link to <code class="inline-code">evan.land/jade/css.html</code>, the tag should look like this: <code class="inline-code">&lt;a href="/jade/css.html"&gt;</code>. This means that if you ever just want to link to the homepage &lpar;e.g. <code class="inline-code">evan.land</code>&rpar;, the correct <code class="inline-code">href</code> is simply <code class="inline-code">href="/"</code>.</p>
+<p>Note that the <code class="inline-code">href</code> goes inside the tag itself! This isn't the only element for which this happens. Another great example is the <code class="inline-code">&lt;img&gt;</code> tag!</p>
+
+<h4>The <code class="inline-code">&lt;img&gt;</code> tag</h4>
+<p>It's actually really easy to put pictures on websites&mdash;there's a tag for that!</p>
+
+<div class="image-wrapper">
+  <img src="http://imgs.xkcd.com/comics/tags.png">
+</div>
+
+<pre><code class="language-markup">&lt;img src="http://imgs.xkcd.com/comics/tags.png"&gt;</code></pre>
+<p>Note that <code class="inline-code">&lt;img&gt;</code> tags do not need need a closing tag, i.e., <code class="inline-code">&lt;/img&gt;</code>.
+
+<p>Also, note that the source of the image (a URL specifying the location of the image) goes inside the tag itself. This isn't the only <strong>attribute</strong> that can be specified inside the tag&colon; we can also set the height and/or width of the image like this!</p>
+
+<pre><code class="language-markup">&lt;img src="http://imgs.xkcd.com/comics/tags.png" width="100%"&gt;</code></pre>
+<pre><code class="language-markup">&lt;img src="http://imgs.xkcd.com/comics/tags.png" height="300px"&gt;</code></pre>
+
+<p>There are several valid formats for these <code class="inline-code">height</code> and <code class="inline-code">width</code> attributes, which we'll cover in more detail in our section on CSS.</p>
+
+
+<h4>The container element: <code class="inline-code">&lt;div&gt;</code></h4>
+<p><code class="inline-code">&lt;div&gt;</code>'s are container elements. They offer a way to organize different HTML elements by <strong>nesting</strong>. In other words, a <code class="inline-code">&lt;div&gt;</code> will almost always contain other elements inside it, like so:
+
+<pre><code class="language-markup">&lt;div&gt;
+    &lt;img src="http://imgs.xkcd.com/comics/tags.png" width="300px"&gt;
+&lt;/div&gt;</code></pre>
+
+<p>Note that the <code class="inline-code">img</code> is indented in this code block. It's common practice to indent whenever an HTML element is <strong>nested</strong> inside another one. When this happens, we refer to the <code class="inline-code">div</code> as the <strong>parent</strong> element, and the <code class="inline-code">img</code> as the <strong>child</strong>.</p>
+
+<p>We'll learn more about the importance of divs when we move on to styling our pages. For now, we can just think of them as organizational tools.</p>
+
+
+<h4>Typographical elements: <code class="inline-code">&lt;strong&gt;</code> and <code class="inline-code">&lt;em&gt;</code></h4>
+<p>For anyone who likes typography, this is the fun stuff! You can use tags to make your type <strong>bold</strong> or <em>italicized</em>.</p>
+
+<pre><code class="language-markup">&lt;strong&gt;I'm bold!&lt;/strong&gt;
+
+&lt;em&gt;I'm italicized!&lt;/em&gt;
+
+&lt;strong&gt;
+    &lt;em&gt;I'm bold and italicized!&lt;/em&gt;
+&lt;/strong&gt;
+
+&lt;em&gt;
+    &lt;strong&gt;I'm bold and italicized, too! The order doesn't matter here.&lt;/strong&gt;
+&lt;/em&gt;</code></pre>
+
+
+
+<div class="separator"></div>
+
+
+
+<p>OK, we've already learned a lot! There are more useful HTML elements out there, but we still have a pretty good idea of what HTML looks like. Now, let's focus on how to use HTML in practice.</p>
+
+<h3 id="files"><a href="#files">What should an HTML file look like?</a></h3>
+
+<p>Here's a very minimal skeleton. We can fill it out later once we start building our own pages!</p>
+
+<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;!-- This is a comment. --&gt;
+
+        &lt;title&gt;Wow!&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- Put all content here. --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+<p class="with-list">Check it out! Let's look at this file line-by-line to understand it.</p>
+<ul>
+  <li>
+    <p><code class="inline-code">&lt;!DOCTYPE html&gt;</code></p>
+    <p>Every HTML file must have exactly this as its first line. Otherwise, your browser won't know how to interpret the file.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">&lt;html&gt;</code></p>
+    <p>Remember how you can nest HTML elements? Well, it turns out that every HTML file is nested inside one <code class="inline-code">html</code> element! This line of code is almost always the second line of code inside an HTML file, and it must contain exactly two children: <code class="inline-code">head</code> and <code class="inline-code">body</code>.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">&lt;head&gt;</code></p>
+    <p>The <code class="inline-code">head</code> element contains information about the HTML page that is important, but shouldn't be rendered inside your browser alongside all the content. For example, this is how your browser knows what text to put in the tab &lpar;for this website, &ldquo;From Zero to Website&rdquo;&rpar;, or the little icon next to it &lpar;the green J&rpar;.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">&lt;!-- This is a comment --&gt;</code></p>
+    <p><strong>Comments</strong> can help clarify confusing sections of code. They're a useful way to explain your code to someone else &lpar;most often, the &ldquo;someone else&rdquo; ends up being you 2 months later, so be nice to your future self&rpar;.</p>
+    <p>Comments must begin with <code class="inline-code">&lt;!--</code> and end with <code class="inline-code">--&gt;</code>.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">&lt;title&gt;Wow!&lt;/title&gt;</code></p>
+    <p>The <code class="inline-code">title</code> is that small blob of text that's displayed in your browser's tab. It won't affect anything else on the page.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">&lt;/head&gt;</code></p>
+    <p>Closing the <code class="inline-code">head</code> tag. The head must be closed before the body begins. &hellip;That's a weird sentence.</p>
+  </li>
+  <li>
+    <p><code class="inline-code">&lt;body&gt;</code> and <code class="inline-code">&lt;/body&gt;</code></p>
+    <p>The <code class="inline-code">body</code> is where all of the content on the page goes. All of the tags we talked about before&mdash;<code class="inline-code">p</code>'s, <code class="inline-code">div</code>'s, <code class="inline-code">img</code>'s&mdash;go here!
+  </li>
+</ul>
+
+<p>That's what a basic HTML file should look like! We're only missing one thing&mdash;the name of the file. The only rule is that the file must end in <code class="inline-code">.html</code>. However, there is a special case: <code class="inline-code">index.html</code>. This will fold in nicely to our next mini-topic: the directory structure for websites.</p>
+
+<div class="separator"></div>
+
+<h3 id="structure"><a href="#structure">How do we organize HTML files?</a></h3>
+
+<p class="with-list">This might be a little complicated, and it's hard to explain without looking at an example. So, let's use this website as an example! The <strong>root directory</strong> of this website is a folder called <code class="inline-code">jade/</code>, and it contains six HTML files. Here are the files and their respective URLs:</p>
+<ul>
+  <li><code class="inline-code">index.html</code> : <code class="inline-code">evan.land/jade/</code></li>
+  <li><code class="inline-code">html.html</code> : <code class="inline-code">evan.land/jade/html.html</code></li>
+  <li><code class="inline-code">css.html</code> : <code class="inline-code">evan.land/jade/css.html</code></li>
+  <li><code class="inline-code">js.html</code> : <code class="inline-code">evan.land/jade/js.html</code></li>
+  <li><code class="inline-code">git.html</code> : <code class="inline-code">evan.land/jade/git.html</code></li>
+  <li><code class="inline-code">nextsteps.html</code> : <code class="inline-code">evan.land/jade/nextsteps.html</code></li>
+</ul>
+
+<p>Note that every page's URL must contain the file name, except for <code class="inline-code">index.html</code>. <span class="major-key">When a folder contains a file named <code class="inline-code">index.html</code>, that is the default page that will be shown when you don't specify a file name.</span></p>
+
+<p>Also, this is an interesting case, because the jade folder is really a folder that lives inside of my personal website. So what the directory structure really looks like is:</p>
+
+<pre><code class="language-markup">evan.land/
+  - index.html
+  - jade/
+    - index.html
+    - html.html
+    - css.html
+    - js.html
+    - git.html
+    - nextsteps.html</code></pre>
+
+<p>There are other files apart from the HTML, so this is a little simplified. Still, this should help clarify the structure.</p>
+
+
+<div class="separator"></div>
+
+<p>We're almost ready to build out our own content! But first, we have an important tool to talk about.</p>
+
+<h3 id="inspector"><a href="#inspector">How do we know what's going on in the browser?</a></h3>
+
+<p>This is a huge problem. If something's broken on your site, how do you know what's happening? Or, maybe more interesting, if you see something awesome on another website, is there a way to find out why it looks the way it does?</p>
+<p>Fortunately, this problem has already been solved beyond our wildest dreams by very smart people! You can <strong>inspect element</strong> by right-clicking in Chrome, Safari, or Firefox. &lpar;In Safari, you might have to <a href="https://developer.apple.com/library/iad/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">enable this manually</a>&rpar;.</p>
+<p>You can also view the <strong>source code</strong> in <code class="inline-code">Tools > Web Developer > Source Code</code> in Firefox, <code class="inline-code">View > Developer > View Source</code> in Chrome, and <code class="inline-code">Develop > Show Page Source</code> in Safari.</p>
+<p>Try viewing the source for this page now! You'll see some things that look familiar, and some things that might look a little bizarre. It's great practice to do this whenever you come across a website you really like and want to see what's going on under the hood.</p>
+<p><span class="major-key">If there's something you don't understand, Google it. Always. Every time.</span> Most of the learning we do as developers happens while we're on the job, or building something on our own, not from tutorials like this. Don't be afraid to explore and learn something new.</p>
+
+<div class="separator"></div>
+
+<p>Let's review some of the language we covered in this lesson. I know this might seem a little silly, but there's actually a great reason to focus on vocabulary, and it's not because I want to treat this like a middle school English class.</p>
+<p><span class="major-key">It is really important to be able to hold a technical conversation.</span> This is something I wish I'd learned earlier on in my life as a programmer! You'll be able to communicate much more easily with other developers if you understand these words and know when it's appropriate to use them.</p>
+
+<h3 id="terms"><a href="#terms">Terms you should know</a></h3>
+
+<dl>
+  <dt>HTML</dt>
+  <dd>Stands for HyperText Markup Language. A standard developed in 1991 by Tim Berners-Lee.</dd>
+  <dt>element</dt>
+  <dd>A component of an HTML page. Every HTML page is made up of elements.</dd>
+  <dt>tag</dt>
+  <dd>The code that opens and closes HTML elements. <code class="inline-code">&lt;p&gt;</code> is an <strong>opening tag</strong>&semi;<code class="inline-code">&lt;/p&gt;</code> is a <strong>closing tag</strong>.</dd>
+  <dt>headers</dt>
+  <dd>Also known as <strong>headings</strong>, although that terminology is getting outdated. Generally speaking, they describe the topic of a section. In decreasing order of priority, they go from <code class="inline-code">&lt;h1&gt;</code> to <code class="inline-code">&lt;h6&gt;</code>.</dd>
+  <dt>anchor tags</dt>
+  <dd>More commonly known as links, represented by <code class="inline-code">&lt;a href="http://some-link.com"&gt;</code>.</dd>
+  <dt>attribute</dt>
+  <dd>A property of an HTML element, like the <code class="inline-code">href</code> in a link or the <code class="inline-code">src</code> in an image.</dd>
+  <dt>nesting</dt>
+  <dd>HTML elements can be <strong>nested</strong> inside one another.</dd>
+  <dt>parent/child</dt>
+  <dd>A <strong>child</strong> element is nested inside its <strong>parent</strong>.</dd>
+  <dt>comment</dt>
+  <dd>Helps to clarify your code. Only visible in the <strong>source code</strong>. In HTML, <code class="inline-code">&lt;!--</code> opens a comment and <code class="inline-code">--&gt;</code> closes a comment. Comments are formatted differently in every language.</dd>
+  <dt>root directory</dt>
+  <dd>The top folder in a file system.</dd>
+  <dt>source code</dt>
+  <dd>Raw code written by a programmer. HTML source code is viewable using the developer tools in your browser.</dd>
+  <dt>inspect element</dt>
+  <dd>You can <strong>inspect element</strong> using your browser to view the properties of a specific HTML element.</dd>
+</dl>
+
+<div class="separator"></div>
+
+<p>Now it's time to apply what you've learned! Let's build something fun.</p>
+
+<h3 id="assignment"><a href="#assignment">A short project</a></h3>
+<h4>Getting started</h4>
+<p>Create a folder at the same level as your <code class="inline-code">Documents</code> folder. It will be your working directory for the remainder of this tutorial.</p>
+<p>Open up <a href="http://sublimetext.com">Sublime Text</a>. You should have downloaded this already, but if not, do so now!</p>
+<p>In Sublime Text, create a new file called <code class="inline-code">index.html</code> and save it inside your working directory.</p>
+
+<h4>Working on the file</h4>
+<p>You can view the HTML file in your browser by right-clicking and choosing "Open with...", then choosing your browser.</p>
+<p>Whenever you want to update your file, make sure you save the file! Saving is very important, not only to make sure your work doesn't disappear, but also because your browser will only display the most recently saved version.</p>
+
+<h4>Checklist</h4>
+<ul>
+  <li>A header with your name in it.</li>
+  <li>A picture of you. Or of your favorite food. Or your least favorite rapper.</li>
+  <li>A paragraph describing yourself. Or your favorite food, or least favorite rapper.</li>
+  <li>At least three links to other websites.</li>
+</ul>
+
+
+        </div>
+        <div class="inline-nav">
+            <div class="next-subject"><a href="/jade/css.html">Styling with CSS</a></div>
+<div class="arrow">
+  <a href="/jade/css.html">
+    <div class="line"></div>
+    <div class="line"></div>
+  </a>
+</div>
+
+        </div>
+        <div class="footer">
+            <span class="left">Designed, developed, and maintained by <a href="http://evantarrh.com">Evan</a>.</span>
+            <span class="right"><a href="https://github.com/evantarrh/jade/issues/new">Suggest an improvement.</a></span>
+        </div>
+    </div>
+    <script src="/jade/js/burger.js"></script>
+    <script src="/jade/js/progress.js"></script>
+    <script src="/jade/js/lib/prism.js"></script>
+</body>
+</html>

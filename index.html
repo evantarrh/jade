@@ -2,27 +2,27 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>{{ meta.title }}</title>
+    <title>From Zero to Website</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="{{ meta.description }}" />
+    <meta name="description" content="Introductory web development curriculum, created by Evan Tarrh" />
     <meta name="robots" content="NOODP, index, follow" />
-    <meta itemprop="name" content="{{ meta.title }}">
-    <meta itemprop="description" content="{{ meta.description }}">
-    <meta itemprop="image" content="{{ meta.image }}">
+    <meta itemprop="name" content="From Zero to Website">
+    <meta itemprop="description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta itemprop="image" content="">
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="{{ meta.twitter_handle }}">
-    <meta name="twitter:title" content="{{ meta.title }}">
-    <meta name="twitter:description" content="{{ meta.description }}">
-    <meta name="twitter:creator" content="{{ meta.twitter_handle }}">
-    <meta name="twitter:image:src" content="{{ meta.twitter_image }}">
-    <meta name="twitter:domain" content="{{ meta.domain }}">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="From Zero to Website">
+    <meta name="twitter:description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="">
+    <meta name="twitter:domain" content="evan.land">
     <!-- Open Graph data (Facebook) -->
-    <meta property="og:title" content="{{ meta.title }}" />
+    <meta property="og:title" content="From Zero to Website" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="{{ meta.url }}/" />
-    <meta property="og:image" content="{{ meta.facebook_image }}" />
-    <meta property="og:description" content="{{ meta.description }}" />
+    <meta property="og:url" content="http://evan.land/jade/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Introductory web development curriculum, created by Evan Tarrh" />
     <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-16x16.png" sizes="16x16" />
     <!-- Chrome Theme Color -->
@@ -36,7 +36,7 @@
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', '{{ meta.google_analytics_id }}', 'auto');
+        ga('create', 'UA-50221324-4', 'auto');
         ga('send', 'pageview');
     </script>
 </head>
@@ -63,10 +63,37 @@
             <h1>From Zero to Website</h1>
         </div>
         <div class="content">
-            {{#block "main"}}{{/block}}
+            <div class="headers hide-mobile">
+  <h1>From Zero to Website</h1>
+  <h2>Learn to build your own personal website</h2>
+</div>
+
+<p>Get psyched! This is an introduction to web development. No prior programming experience is needed.</p>
+
+<h4>What will I learn?</h4>
+<p>We'll cover the fundamentals of HTML, CSS, and JavaScript. Once we've covered the basics, we'll use GitHub to deploy a personal site for the whole world to see.</p>
+
+<h4>What do I need to get started?</h4>
+<p class="with-list">Before going through this tutorial, <strong>do these things</strong>:</p>
+<ul>
+  <li>Register on <a href="//github.com">GitHub</a>. Plus, get your <a href="//education.github.com/pack">student developer pack</a>! It will serve you well.</li>
+  <li>Download <a href="//www.sublimetext.com/3">Sublime Text</a>.</li>
+  <li>Install and set up <a href="https://help.github.com/articles/set-up-git/">Git</a>. In that guide, all you have to do is the four steps inside &ldquo;Setting up Git&rdquo;, but you can also follow the steps for authenticating with GitHub if you're feeling adventurous.</li>
+</ul>
+
+<h4>OK, I'm ready!</h4>
+<p>Then let's go!</p>
+
         </div>
         <div class="inline-nav">
-            {{#block "nav"}}{{/block}}
+            <div class="next-subject"><a href="/jade/html.html">Get started with HTML!</a></div>
+<div class="arrow">
+  <a href="/jade/html.html">
+    <div class="line"></div>
+    <div class="line"></div>
+  </a>
+</div>
+
         </div>
         <div class="footer">
             <span class="left">Designed, developed, and maintained by <a href="http://evantarrh.com">Evan</a>.</span>

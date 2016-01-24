@@ -1,7 +1,69 @@
-{{#extend "base"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>From Zero to Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <meta name="robots" content="NOODP, index, follow" />
+    <meta itemprop="name" content="From Zero to Website">
+    <meta itemprop="description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta itemprop="image" content="">
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="From Zero to Website">
+    <meta name="twitter:description" content="Introductory web development curriculum, created by Evan Tarrh">
+    <meta name="twitter:creator" content="">
+    <meta name="twitter:image:src" content="">
+    <meta name="twitter:domain" content="evan.land">
+    <!-- Open Graph data (Facebook) -->
+    <meta property="og:title" content="From Zero to Website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://evan.land/jade/" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="Introductory web development curriculum, created by Evan Tarrh" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/jade/img/favicon/favicon-16x16.png" sizes="16x16" />
+    <!-- Chrome Theme Color -->
+    <meta name="theme-color" content="#42CBAD">
 
-{{#content "main" mode="prepend"}}
-<div class="headers hide-mobile">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="/jade/css/style.min.css" inline>
+    <!-- Google Analytics go here -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-50221324-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="big-nav hidden">
+        <div class="pages">
+            <ul>
+                <li><a href="/jade/">Introduction</a></li>
+                <li><a href="/jade/html.html">HTML</a></li>
+                <li><a href="/jade/css.html">CSS</a></li>
+                <li><a href="/jade/js.html">Javascript</a></li>
+                <li><a href="/jade/git.html">Git and GitHub</a></li>
+                <li><a href="/jade/nextsteps.html">Next Steps</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div id="burger" class="burger">
+            <div class="patty"></div>
+            <div class="patty"></div>
+            <div class="patty"></div>
+        </div>
+        <div class="mobile-only mobile-header">
+            <h1>From Zero to Website</h1>
+        </div>
+        <div class="content">
+            <div class="headers hide-mobile">
   <h1>Git and GitHub</h1>
   <h2>Keep track of your code</h2>
 </div>
@@ -152,16 +214,25 @@
 <p>If you are still thirsting for more knowledge and more stuff to do, don't worry&colon; I'm on the same page. There's one more page full of extra things to learn about that will make you an even better web developer.</p>
 
 
-{{/content}}
 
-{{#content "nav" mode="prepend"}}
-<div class="next-subject"><a href="/jade/nextsteps.html">Bonus round</a></div>
+        </div>
+        <div class="inline-nav">
+            <div class="next-subject"><a href="/jade/nextsteps.html">Bonus round</a></div>
 <div class="arrow">
   <a href="/jade/nextsteps.html">
     <div class="line"></div>
     <div class="line"></div>
   </a>
 </div>
-{{/content}}
 
-{{/extend}}
+        </div>
+        <div class="footer">
+            <span class="left">Designed, developed, and maintained by <a href="http://evantarrh.com">Evan</a>.</span>
+            <span class="right"><a href="https://github.com/evantarrh/jade/issues/new">Suggest an improvement.</a></span>
+        </div>
+    </div>
+    <script src="/jade/js/burger.js"></script>
+    <script src="/jade/js/progress.js"></script>
+    <script src="/jade/js/lib/prism.js"></script>
+</body>
+</html>
